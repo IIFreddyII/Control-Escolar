@@ -1,24 +1,72 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Button, Form } from 'react-bootstrap';
+import axios from 'axios';
 
-function Example() {
+
+const Example = () =>{
+  const [formValue, setformValue] = React.useState({
+    email: '',
+    password:''
+  })
+
+
+// let history = useHistory();
+
+const onChange = (e) => {
+  e.persist();
+  setformValue({...formValue, [e.target.name]: e.target.value});
+}
+
+const handleSubmit = (e) => {
+  if (e && e.preventDefault()) e.preventDefault();
+
+const formData = new FormData();
+formData.append("email", formValue.email)
+formData.append("password",formValue.password)
+axios.post("http://localhost/Topicos/ProyectV1/public/api/login",
+formData,
+{headers: {'Content-Type': 'multipart/form-data',
+'Accept': 'aplication/json'}}
+).then(response => {
+  console.log('response');
+  console.log(response);
+  // history.push({
+  //   pathname: "http://localhost/TopAvaWeb/Proyect/public/home",
+  //   state:{token:response.data.token}
+  //   }
+  // )
+    }).catch(error => {
+      console.log(error);
+    });
+};
+
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
+        <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" name="email" value={formValue.email} onChange={onChange}/>
+                <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                </Form.Text>
+            </Form.Group>
 
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="text" placeholder="Password" name="password" value={formValue.password} onChange={onChange}/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        </Form>
     );
 }
 
 export default Example;
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+if (document.getElementById('main')) {
+    ReactDOM.render(<Example />, document.getElementById('main'));
 }
