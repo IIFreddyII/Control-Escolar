@@ -80,7 +80,7 @@ class SubjectController extends Controller
     }
 
     
-    public function destroy(Requets $request)
+    public function destroy(Request $request)
     {
         $subject = Subject::find($request->id);
         $subject->delete();
