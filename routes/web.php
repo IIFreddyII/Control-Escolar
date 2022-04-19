@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,6 @@ Route::get('/', function () {
 });
 
 /*Subject*/
-
 /**Gerarr token */
 Route::get('/create_token', [SubjectController::class, 'create_token']);
 /*Ruta para ver todos los datos de todas las materias*/
@@ -63,3 +63,17 @@ Route::get('/student_show/{id}', [StudentController::class, 'show']);
 Route::put('/student_update', [StudentController::class, 'update']);
 /*Ruta para eliminar registros*/
 Route::post('/student_delete', [StudentController::class, 'destroy']);
+
+/*Departments*/
+/**Gerarr token */
+Route::get('/create_token_department', [DepartmentController::class, 'create_token']);
+/*Ruta para ver todos los datos de los departamentos*/
+Route::get('/department_index', [DepartmentController::class, 'index']);
+/*Ruta Insertar datos */
+Route::post('/department_insert', [DepartmentController::class, 'store']);
+/*Ruta para ver datos por ID de los departamentos*/
+Route::get('/department_show/{nDep}', [DepartmentController::class, 'show']);
+/*Ruta para ver todos los datos de todas los departamentos*/
+Route::put('/department_update', [DepartmentController::class, 'update']);
+/*Ruta para eliminar registros*/
+Route::post('/department_delete', [DepartmentController::class, 'destroy']);

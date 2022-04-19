@@ -4,82 +4,82 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class DepartmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $departments = Department::all();
+        return $departments;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:20|unique:departments,name',
+            'ext' => 'required|unique:departments,ext',
+        ]);
+
+        if($validator->fails()){
+            return $validator->errors();
+        }
+
+        $department = Department::create([
+            'name' => $request->name,
+            'ext' => $request->ext,
+        ]);
+        echo $request->name;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Department  $department
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Department $department)
+    public function show($id)
     {
-        //
+        $department = Department::find($id);
+        return $department;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Department  $department
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Department $department)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Department  $department
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Department $department)
+    public function update(Request $request)
     {
-        //
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:20|unique:departments,name',
+            'ext' => 'required|unique:departments,ext',
+        ]);
+
+        if($validator->fails()){
+            return $validator->errors();
+        }
+
+        $department = Department::find($request->id);
+        $department->name = $request->name;
+        $department->ext = $request->ext;
+
+        /**Actualizar la informacion */
+        $department->save();
+        return $department;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Department  $department
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Department $department)
+    public function destroy(Request $request)
     {
-        //
+        $department = Department::find($request->id);
+        $department->delete();
+        $department = Department::all();
+        return $department;
+    }
+    //generar un token
+    public function create_token(){
+        return csrf_token();
     }
 }
