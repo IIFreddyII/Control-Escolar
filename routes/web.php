@@ -57,3 +57,9 @@ Route::get('/create_token_student', [StudentController::class, 'create_token']);
 Route::get('/student_index', [StudentController::class, 'index']);
 /*Ruta Insertar datos */
 Route::post('/student_insert', [StudentController::class, 'store']);
+/*Ruta para ver datos por ID de carreras*/
+Route::get('/student_show/{id}', [StudentController::class, 'show']);
+/*Ruta para ver todos los datos de todas las carreras*/
+Route::put('/student_update', [StudentController::class, 'update']);
+/*Ruta para eliminar registros*/
+Route::post('/student_delete', [StudentController::class, 'destroy']);
