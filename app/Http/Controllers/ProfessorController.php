@@ -4,82 +4,86 @@ namespace App\Http\Controllers;
 
 use App\Models\Professor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ProfessorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $professors = Professor::all();
+        return $professors;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:20|unique:professors,name',
+            'sexuality' => 'required|max:1',
+            'nDep' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return $validator->errors();
+        }
+
+        $professor = Professor::create([
+            'name' => $request->name,
+            'sexuality' => $request->sexuality,
+            'nDep' => $request->nDep,
+        ]);
+        echo $request->name;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Professor  $professor
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Professor $professor)
+    public function show($id)
     {
-        //
+        $professor = Professor::find($id);
+        return $professor;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Professor  $professor
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Professor $professor)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Professor  $professor
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Professor $professor)
+    public function update(Request $request)
     {
-        //
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:20|unique:professors,name',
+            'sexuality' => 'required|max:1',
+            'nDep' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return $validator->errors();
+        }
+
+        $professor = Professor::find($request->id);
+        $professor->name = $request->name;
+        $professor->sexuality = $request->sexuality;
+        $professor->nDep = $request->nDep;
+
+        /**Actualizar la informacion */
+        $professor->save();
+        return $professor;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Professor  $professor
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Professor $professor)
+    public function destroy(Request $request)
     {
-        //
+        $professor = Professor::find($request->id);
+        $professor->delete();
+        $professor = Professor::all();
+        return $professor;
+    }
+    //generar un token
+    public function create_token(){
+        return csrf_token();
     }
 }
