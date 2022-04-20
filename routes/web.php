@@ -6,6 +6,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\GroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +93,17 @@ Route::get('/professor_show/{id}', [ProfessorController::class, 'show']);
 Route::put('/professor_update', [ProfessorController::class, 'update']);
 /*Ruta para eliminar registros*/
 Route::post('/professor_delete', [ProfessorController::class, 'destroy']);
+
+/*Group*/
+/**Gerarr token */
+Route::get('/create_token_group', [GroupController::class, 'create_token']);
+/*Ruta para ver todos los datos de los grupos*/
+Route::get('/group_index', [GroupController::class, 'index']);
+/*Ruta Insertar datos */
+Route::post('/group_insert', [GroupController::class, 'store']);
+/*Ruta para ver datos por ID de los grupos*/
+Route::get('/group_show/{id}', [GroupController::class, 'show']);
+/*Ruta para ver todos los datos de todas los grupos*/
+Route::put('/group_update', [GroupController::class, 'update']);
+/*Ruta para eliminar registros*/
+Route::post('/group_delete', [GroupController::class, 'destroy']);

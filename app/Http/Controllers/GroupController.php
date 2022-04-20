@@ -4,82 +4,95 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class GroupController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $groups = Group::all();
+        return $groups;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'nGrp' => 'required|max:2',
+            'nPro' => '',
+            'nSub' => '',
+            'nCtl' => '',
+            'cal' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return $validator->errors();
+        }
+
+        $group = Group::create([
+            'nGrp' => $request->nGrp,
+            'nPro' => $request->nPro,
+            'nSub' => $request->nSub,
+            'nCtl' => $request->nCtl,
+            'cal' => $request->cal,
+        ]);
+        echo $request->nGrp;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Group  $group
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Group $group)
+    
+    public function show($id)
     {
-        //
+        $group = Group::find($id);
+        return $group;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Group  $group
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(Group $group)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Group  $group
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Group $group)
+
+    public function update(Request $request)
     {
-        //
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'nGrp' => 'required|max:2',
+            'cal' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return $validator->errors();
+        }
+
+        $group = Group::find($request->id);
+        $group->nGrp = $request->nGrp;
+        $group->cal = $request->cal;
+
+        /**Actualizar la informacion */
+        $group->save();
+        return $group;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Group  $group
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Group $group)
+    
+    public function destroy(Request $request)
     {
-        //
+        $group = Group::find($request->id);
+        $group->delete();
+        $group = Group::all();
+        return $group;
+    }
+    //generar un token
+    public function create_token(){
+        return csrf_token();
     }
 }
