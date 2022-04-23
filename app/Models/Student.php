@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nCtl',  //numero de control
+        //'nCtl',  //numero de control
         'name', //nombre estudiante
         'sexuality', //sexo
         'address', //domiciolio

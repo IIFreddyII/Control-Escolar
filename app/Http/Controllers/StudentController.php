@@ -24,7 +24,6 @@ class StudentController extends Controller
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'nCtl' => 'required|max:3|unique:students,nCtl',
             'name' => 'required|max:20',
             'sexuality' => 'required|max:1',
             'address' => 'required|max:20',
@@ -37,7 +36,6 @@ class StudentController extends Controller
         }
 
         $student = Student::create([
-            'nCtl' => $request->nCtl,
             'name' => $request->name,
             'sexuality' => $request->sexuality,
             'address' => $request->address,
@@ -58,7 +56,7 @@ class StudentController extends Controller
         //
     }
 
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
@@ -88,9 +86,9 @@ class StudentController extends Controller
         return $student;
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $student = Student::find($request->id);
+        $student = Student::find($id);
         $student->delete();
         $student = Student::all();
         return $student;
