@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubjectsTable extends Migration
+class CreateStudentSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('student_subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('nSub', 3);
-            $table->string('name', 20);
+            $table->foreignId('idSubject')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreignId('idStudent')->references('id')->on('students')->onDelete('cascade');
+            $table->string('cal');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateSubjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('student_subjects');
     }
 }

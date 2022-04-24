@@ -9,26 +9,33 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
+    
     public function index()
     {
         $students = Student::all();
         return $students;
     }
 
+    
     public function create()
     {
         //
     }
 
+    
     public function store(Request $request)
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:20',
-            'sexuality' => 'required|max:1',
-            'address' => 'required|max:20',
-            'age' => 'required|max:2',
-            'nCar' => 'required|max:2',
+            'idUser' => 'required',
+            'name' => 'required',
+            'firstName' => '',
+            'lastName' => 'required',
+            'sex' => 'required',
+            'curp' => 'required|max:18|unique:students,curp',
+            'address' => 'required',
+            'tel' => 'required|max:10|unique:students,tel',
+
         ]);
 
         if($validator->fails()){
@@ -36,49 +43,60 @@ class StudentController extends Controller
         }
 
         $student = Student::create([
+            'idUser' => $request->idUser,
             'name' => $request->name,
-            'sexuality' => $request->sexuality,
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'sex' => $request->sex,
+            'curp' => $request->curp,
             'address' => $request->address,
-            'age' => $request->age,
-            'nCar' => $request->nCar,
+            'tel' => $request->tel,
         ]);
         echo $request->name;
     }
 
+    
     public function show($id)
     {
         $student = Student::find($id);
         return $student;
     }
 
+    
     public function edit(Student $student)
     {
         //
     }
 
+    
     public function update(Request $request, $id)
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            //'nCtl' => 'required|max:3|unique:students,nCtl',
-            'name' => 'required|max:20',
-            'sexuality' => 'required|max:1',
-            'address' => 'required|max:20',
-            'age' => 'required|max:2',
-            'nCar' => 'required|max:2',
+            'idUser' => 'required',
+            'name' => 'required',
+            'firstName' => '',
+            'lastName' => 'required',
+            'sex' => 'required',
+            'curp' => 'required|max:18|unique:students,curp',
+            'address' => 'required',
+            'tel' => 'required|max:10|unique:students,tel',
+
         ]);
 
         if($validator->fails()){
             return $validator->errors();
         }
 
-        $student = Student::find($request->id);
-        //$student->nCtl = $request->nCtl;
+        $student = Student::find($id);
+        $student->idUser = $request->idUser;
         $student->name = $request->name;
-        $student->sexuality = $request->sexuality;
+        $student->firstName = $request->firstName;
+        $student->lastName = $request->lastName;
+        $student->sex = $request->sex;
+        $student->curp = $request->curp;
         $student->address = $request->address;
-        $student->age = $request->age;
-        $student->nCar = $request->nCar;
+        $student->tel = $request->tel;
         
 
         /**Actualizar la informacion */
@@ -86,15 +104,12 @@ class StudentController extends Controller
         return $student;
     }
 
+    
     public function destroy($id)
     {
         $student = Student::find($id);
         $student->delete();
         $student = Student::all();
         return $student;
-    }
-    //generar un token
-    public function create_token(){            
-        return csrf_token();
     }
 }

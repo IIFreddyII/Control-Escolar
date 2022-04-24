@@ -16,7 +16,7 @@ class GroupController extends Controller
         return $groups;
     }
 
-
+    
     public function create()
     {
         //
@@ -27,11 +27,9 @@ class GroupController extends Controller
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'nGrp' => 'required|max:2',
-            'nPro' => '',
-            'nSub' => '',
-            'nCtl' => '',
-            'cal' => 'required',
+            'name' => 'required|unique:groups,name',
+            'size' => 'required',
+            'idCar' => 'required',
         ]);
 
         if($validator->fails()){
@@ -39,13 +37,11 @@ class GroupController extends Controller
         }
 
         $group = Group::create([
-            'nGrp' => $request->nGrp,
-            'nPro' => $request->nPro,
-            'nSub' => $request->nSub,
-            'nCtl' => $request->nCtl,
-            'cal' => $request->cal,
+            'name' => $request->name,
+            'size' => $request->size,
+            'idCar' => $request->idCar,
         ]);
-        echo $request->nGrp;
+        echo $request->name;
     }
 
     
@@ -62,21 +58,23 @@ class GroupController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'nGrp' => 'required|max:2',
-            'cal' => 'required',
+            'name' => 'required|unique:groups,name',
+            'size' => 'required',
+            'idCar' => 'required',
         ]);
 
         if($validator->fails()){
             return $validator->errors();
         }
 
-        $group = Group::find($request->id);
-        $group->nGrp = $request->nGrp;
-        $group->cal = $request->cal;
+        $group = Group::find($id);
+        $group->name = $request->name;
+        $group->size = $request->size;
+        $group->idCar = $request->idCar;
 
         /**Actualizar la informacion */
         $group->save();
@@ -84,15 +82,11 @@ class GroupController extends Controller
     }
 
     
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $group = Group::find($request->id);
+        $group = Group::find($id);
         $group->delete();
         $group = Group::all();
         return $group;
-    }
-    //generar un token
-    public function create_token(){
-        return csrf_token();
     }
 }

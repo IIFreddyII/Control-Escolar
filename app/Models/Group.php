@@ -9,10 +9,9 @@ class Group extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nGrp',
-        'nPro',
-        'nSub'.
-        'nCtl',
-        'cal',
+        //'idCareer',
+        'name', 
+        'size', 
+        'idCar',   
     ];
 }

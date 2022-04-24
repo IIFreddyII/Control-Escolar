@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Career;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -8,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class CareerController extends Controller
 {
+    
     public function index()
     {
         $careers = Career::all();
@@ -23,10 +25,12 @@ class CareerController extends Controller
     
     public function store(Request $request)
     {
-        
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'nameCar' => 'required|max:20|unique:careers,nameCar',
+            'clave' => 'required|unique:careers,clave',
+            'name' => 'required|unique:careers,name',
+            'area' => 'required',
+            'idSchool' => 'required',
         ]);
 
         if($validator->fails()){
@@ -34,9 +38,12 @@ class CareerController extends Controller
         }
         
         $career = Career::create([
-            'nameCar' => $request->nameCar,
+            'clave' => $request->clave,
+            'name' => $request->name,
+            'area' => $request->area,
+            'idSchool' => $request->idSchool,
         ]);
-        echo $career->nameCar;
+        echo $career->name;
     }
 
     
@@ -53,19 +60,25 @@ class CareerController extends Controller
     }
 
     
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-         /*validacion de los campos*/
-         $validator = Validator::make($request->all(), [
-            'nameCar' => 'required|max:20|unique:careers,nameCar',
+        /*validacion de los campos*/
+        $validator = Validator::make($request->all(), [
+            'clave' => 'required|unique:careers,clave',
+            'name' => 'required|unique:careers,name',
+            'area' => 'required',
+            'idSchool' => 'required',
         ]);
 
         if($validator->fails()){
             return $validator->errors();
         }
         
-        $career = Career::find($request->id);
-        $career->nameCar = $request->nameCar;
+        $career = Career::find($id);
+        $career->clave = $request->clave;
+        $career->name = $request->name;
+        $career->area = $request->area;
+        $career->idSchool = $request->idSchool;
 
         /**Actualizar la informacion */
         $career->save();
@@ -73,15 +86,11 @@ class CareerController extends Controller
     }
 
     
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $career = Career::find($request->id);
+        $career = Career::find($id);
         $career->delete();
         $career = Career::all();
         return $career;
-    }
-    //generar un token
-    public function create_token(){            
-        return csrf_token();
     }
 }
