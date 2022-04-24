@@ -28,7 +28,7 @@ class SemesterController extends Controller
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
             'idCareer' => 'required',
-            'idSubject' => 'required|unique:semesters,idSubject',
+            //'idSubject' => 'required|unique:semesters,idSubject',
             'name' => 'required',
             'period' => 'required',
         ]);
@@ -39,7 +39,7 @@ class SemesterController extends Controller
 
         $semester = Semester::create([
             'idCareer' => $request->idCareer,
-            'idSubject' => $request->idSubject,
+            //'idSubject' => $request->idSubject,
             'name' => $request->name,
             'period' => $request->period,
         ]);
@@ -65,7 +65,7 @@ class SemesterController extends Controller
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
             'idCareer' => 'required',
-            'idSubject' => 'required|unique:semesters,idSubject',
+            //'idSubject' => 'required|unique:semesters,idSubject',
             'name' => 'required',
             'period' => 'required',
         ]);
@@ -76,7 +76,7 @@ class SemesterController extends Controller
 
         $semester = Semester::find($request->id);
         $semester->idCareer = $request->idCareer;
-        $semester->idSubject = $request->idSubject;
+       // $semester->idSubject = $request->idSubject;
         $semester->name = $request->name;
         $semester->period = $request->period;
 

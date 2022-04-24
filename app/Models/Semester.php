@@ -10,7 +10,7 @@ class Semester extends Model
     use HasFactory;
     protected $fillable = [
         'idCareer',
-        'idSubject',
+        //'idSubject',
         'name',
         'period', //Periodo escolar
     ];

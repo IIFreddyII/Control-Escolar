@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSemestersTable extends Migration
+class CreateProfessorSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSemestersTable extends Migration
      */
     public function up()
     {
-        Schema::create('semesters', function (Blueprint $table) {
+        Schema::create('professor_subjects', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idCareer')->references('id')->on('careers')->onDelete('cascade');
+            $table->foreignId('idProfessor')->references('id')->on('professors')->onDelete('cascade');
             $table->foreignId('idSubject')->references('id')->on('subjects')->onDelete('cascade');
-            $table->string('name');
-            $table->string('period');  //Periodo escolar
+            $table->string('period');
+            $table->string('year');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSemestersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semesters');
+        Schema::dropIfExists('professor_subjects');
     }
 }

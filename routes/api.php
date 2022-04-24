@@ -10,7 +10,8 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentSubjectController;
-
+use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\ProfessorSubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +76,20 @@ Route::post('/studentSubject_insert', [StudentSubjectController::class, 'store']
 Route::get('/studentSubject_show/{id}', [StudentSubjectController::class, 'show']);
 Route::put('/studentSubject_update/{id}', [StudentSubjectController::class, 'update']);
 Route::post('/studentSubject_delete/{id}', [StudentSubjectController::class, 'destroy']);
+
+/*Professor*/
+Route::get('/professor_index', [ProfessorController::class, 'index']);
+Route::post('/professor_insert', [ProfessorController::class, 'store']);
+Route::get('/professor_show/{id}', [ProfessorController::class, 'show']);
+Route::put('/professor_update/{id}', [ProfessorController::class, 'update']);
+Route::post('/professor_delete/{id}', [ProfessorController::class, 'destroy']);
+
+/*Professor_Subject*/
+Route::get('/professorSubject_index', [ProfessorSubjectController::class, 'index']);
+Route::post('/professorSubject_insert', [ProfessorSubjectController::class, 'store']);
+Route::get('/professorSubject_show/{id}', [ProfessorSubjectController::class, 'show']);
+Route::put('/professorSubject_update/{id}', [ProfessorSubjectController::class, 'update']);
+Route::post('/professorSubject_delete/{id}', [ProfessorSubjectController::class, 'destroy']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -28,6 +28,7 @@ class SubjectController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:45|unique:subjects,name',
             'credit' => 'required|max:1',
+            'idSemester' => 'required',
         ]);
 
         if($validator->fails()){
@@ -37,6 +38,7 @@ class SubjectController extends Controller
         $subject = Subject::create([
             'name' => $request->name,
             'credit' => $request->credit,
+            'idSemester' =>$request->idSemester,
         ]);
         echo $request->name;
     }
@@ -60,8 +62,9 @@ class SubjectController extends Controller
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:20|unique:subjects,name',
+            'name' => 'required|max:45|unique:subjects,name',
             'credit' => 'required|max:1',
+            'idSemester' => 'required',
         ]);
 
         if($validator->fails()){
@@ -71,6 +74,7 @@ class SubjectController extends Controller
         $subject = Subject::find($request->id);
         $subject->name = $request->name;
         $subject->credit = $request->credit;
+        $subject->idSemester = $request->idSemester;
 
         /**Actualizar la informacion */
         $subject->save();
