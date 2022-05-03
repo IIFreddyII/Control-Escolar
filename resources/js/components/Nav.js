@@ -1,12 +1,11 @@
 import React from "react";
-
-import ShowStudents from "./students/ShowStudents";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Admin</a>
+                <a className="navbar-brand" href="#">CONTROL ESCOLAR</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -14,27 +13,28 @@ const Nav = () => {
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item">
-                            <a className="nav-link active" href="">Carreras
-                                <span className="visually-hidden">(current)</span>
-                            </a>
+                            <a className="nav-link" to="">Escuelas</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Departamentos</a>
+                            <a className="nav-link" href="#"> Carreras</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Grupos</a>
+                            <a className="nav-link" href="#"> Grupos</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Profesores</a>
+                            <a className="nav-link" href="#"> Semestre</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Estudiantes</a>
+                            <a className="nav-link" href="#"> Materias</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Materias</a>
+                            <Link className="nav-link" to="/">Studiantes</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Usuarios</a>
+                            <a className="nav-link" href="#"> Profesor</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#"> Usuarios</a>
                         </li>
                     </ul>
                 </div>

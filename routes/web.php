@@ -1,12 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SubjectController;
-use App\Http\Controllers\CareerController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\ProfessorController;
-use App\Http\Controllers\GroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +15,9 @@ use App\Http\Controllers\GroupController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/school', function () {
+    return view('school');
 });
 
