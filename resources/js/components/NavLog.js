@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
-const Navigation = () => {
+const NavLog = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to="/homePage">
+                <Navbar.Brand as={Link} to="/">
                     <img
                         src="https://cdn-icons-png.flaticon.com/512/4207/4207247.png" height={'50px'}
                     />
@@ -13,20 +13,22 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                    
                     </Nav>
-                    <h4>Admin</h4>
                     <Nav>
-                        
                         <Nav.Link as={Link} to="/Login">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png" height={'30px'}
                             />
-                            Cerrar Session</Nav.Link>
+                             Login</Nav.Link>
+                        <Nav.Link as={Link} to="/Register">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/3596/3596029.png" height={'30px'}
+                            />
+                             Registro</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
     )
 }
-export default Navigation
+export default NavLog

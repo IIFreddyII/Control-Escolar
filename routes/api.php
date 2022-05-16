@@ -26,6 +26,9 @@ use App\Http\Controllers\ProfessorSubjectController;
 
 Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
+Route::get('/user_index', [PassportAuthController::class, 'index']);
+Route::post('/user_delete/{id}', [PassportAuthController::class, 'destroy']);
+
 
 //School
 Route::get('/school_index', [SchoolController::class, 'index']);
@@ -92,7 +95,7 @@ Route::put('/professorSubject_update/{id}', [ProfessorSubjectController::class, 
 Route::post('/professorSubject_delete/{id}', [ProfessorSubjectController::class, 'destroy']);
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->group(function () {
+    
 });
 

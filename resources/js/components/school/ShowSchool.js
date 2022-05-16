@@ -47,7 +47,7 @@ const ShowSchool = () => {
                             <td> {school.tel} </td>
                             <td> {school.email} </td>
                             <td>
-                                <Link to={`/edit/${school.id}`} className='btn btn-warning'>Editar</Link>
+                                <Link to={`/editSchool/${school.id}`} className='btn btn-warning'>Editar</Link>
                                 <button onClick={() => deleteSchools(school.id)} className='btn btn-danger'>Eliminar</button>
                             </td>
 
@@ -56,7 +56,7 @@ const ShowSchool = () => {
                 </tbody>
             </table>
             <div className='gap-2'>
-                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar Nueva Escuela</Link>
+                <Link to="/createSchool" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar Nueva Escuela</Link>
             </div>
         </div>
 

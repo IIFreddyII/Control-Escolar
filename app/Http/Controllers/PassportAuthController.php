@@ -7,6 +7,19 @@ use App\Models\User;
 
 class PassportAuthController extends Controller
 {
+    public function index()
+    {
+        $users = User::all();
+        return $users;
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        echo "Registro Eliminado";
+    }
+
     public function register(Request $request){
         $this->validate($request, [
             //'name' => 'required|min:4',
@@ -40,4 +53,6 @@ class PassportAuthController extends Controller
             return response()->json(['error' => 'Unauthorised'], 401);
         }
     }
+
+    
 }

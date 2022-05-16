@@ -1,34 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 
-import ShowSchool from './school/ShowSchool';
-import CreateSchool from './school/CreateSchool';
-import EditSchool from './school/EditSchool';
+import NavLog from './NavLog';
+import Login from './auth/Login';
+import Register from './auth/Register';
+import Menu from './Menu';
+
+
 
 
 
 function Main() {
     return (
-        <Router>
+        <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path="/"><ShowSchool /></Route>
-                    <Route path="/create"><CreateSchool /></Route>
-                    <Route path="/edit/:id">< EditSchool/></Route>
+                    <Route exact path="/" component={Login} />
+                    <Route exact path="/Register" component={Register} />
+                    <Route exact path="/menu" component={Menu} />
                 </Switch>
             </div>
-        </Router>
+            
+        </BrowserRouter>
     )
 }
 
 export default Main;
-// for <div id="main-employee"></div>
 if (document.getElementById('main')) {
     ReactDOM.render(<Main />, document.getElementById('main'));
 }
