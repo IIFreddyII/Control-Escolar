@@ -4,14 +4,13 @@ import { useHistory } from 'react-router-dom';
 
 
 
-const ruta = 'http://localhost:8000/api/school_insert';
+const ruta = 'http://localhost:8000/api/career_insert';
 
-const CreateSchool = () => {
+const CreateCareer = () => {
     const [clave, setClave] = useState('')
     const [name, setName] = useState('')
-    const [address, setAddress] = useState('')
-    const [tel, setTel] = useState('')
-    const [email, setEmail] = useState('@gmail.com')
+    const [area, setArea] = useState('')
+    const [idSchool, setIdSchool] = useState('')
     const history = useHistory()
 
     const store = async (e) => {
@@ -19,16 +18,15 @@ const CreateSchool = () => {
         await axios.post(ruta, {
             clave: clave,
             name: name,  
-            address: address,
-            tel: tel,
-            email: email
+            area: area,
+            idSchool: idSchool
         })
-        history.push('/showSchool')
+        history.push('/showCareer')
     }
     
   return (
     <div>
-        <h3 className='text-center'>Nueva Escuela</h3>
+        <h3 className='text-center'>Nueva Carrera</h3>
         <form onSubmit={store}>
             <div className='text-center'>
             <div className='mb-3'>
@@ -50,29 +48,20 @@ const CreateSchool = () => {
                 />
             </div>
             <div className='mb-3'>
-                <label className='form-label'>Direccion</label>
+                <label className='form-label'>Area</label>
                 <input 
-                    value={address}
-                    onChange={ (e)=> setAddress(e.target.value)}
+                    value={area}
+                    onChange={ (e)=> setArea(e.target.value)}
                     type='text'
                     className='form-control'
                 />
             </div>
             <div className='mb-3'>
-                <label className='form-label'>Telefono</label>
+                <label className='form-label'>Clave de Escuela</label>
                 <input 
-                    value={tel}
-                    onChange={ (e)=> setTel(e.target.value)}
+                    value={idSchool}
+                    onChange={ (e)=> setIdSchool(e.target.value)}
                     type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Correo</label>
-                <input 
-                    value={email}
-                    onChange={ (e)=> setEmail(e.target.value)}
-                    type='email'
                     className='form-control'
                 />
             </div>
@@ -83,4 +72,4 @@ const CreateSchool = () => {
   )
 }
 
-export default CreateSchool;
+export default CreateCareer;

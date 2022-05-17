@@ -13,6 +13,6 @@ require('./bootstrap');
  */
 
 //require('./components/Example');
-//require('./components/Main');
-require('./components/Menu');
+require('./components/Main');
+//require('./components/Menu');
 

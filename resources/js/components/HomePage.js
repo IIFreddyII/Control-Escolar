@@ -18,7 +18,7 @@ const HomePage = () => {
                         <h2>Alumnos</h2>
                     </div>
                     <div className="col">
-                        <Link to="/showStudent">
+                        <Link to="/showProfessor">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/7097/7097181.png" height={'100px'}
                             />
@@ -26,7 +26,7 @@ const HomePage = () => {
                         <h2>Profesores</h2>
                     </div>
                     <div className="col">
-                        <Link to="/group">
+                        <Link to="/showGroup">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" height={'100px'}
                             />
@@ -36,7 +36,7 @@ const HomePage = () => {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <Link to="/showStudent">
+                        <Link to="/showSubject">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/2702/2702069.png" height={'100px'}
                             />
@@ -52,7 +52,7 @@ const HomePage = () => {
                         <h2>Escuelas</h2>
                     </div>
                     <div className="col">
-                        <Link to="/showStudent">
+                        <Link to="/showCareer">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/2000/2000920.png" height={'100px'}
                             />
@@ -62,7 +62,7 @@ const HomePage = () => {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <Link to="/showStudent">
+                        <Link to="/showSemeste">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/2234/2234723.png" height={'100px'}
                             />
@@ -78,6 +78,12 @@ const HomePage = () => {
                         <h2>Usuarios</h2>
                     </div>
                     <div className="col">
+                        <Link to="/showNotes">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/3329/3329524.png" height={'100px'}
+                            />
+                        </Link>
+                        <h2>Calificaciones</h2>
                     </div>
                 </div>
             </div>
