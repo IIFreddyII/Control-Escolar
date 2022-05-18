@@ -33,6 +33,7 @@ const ShowUser = () => {
                             <th>Correo</th>
                             <th>Password</th>
                             <th>type</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

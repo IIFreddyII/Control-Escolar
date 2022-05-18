@@ -1,10 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
-import Select from 'react-select'
-
-
-
 
 const ruta = 'http://localhost:8000/api/student_insert';
 
@@ -24,7 +21,6 @@ const CreateStudent = () => {
     const store = async (e) => {
         e.preventDefault()
         await axios.post(ruta, {
-
             idUser: idUser,
             name: name,
             firstName: firstName,
@@ -38,7 +34,8 @@ const CreateStudent = () => {
     }
 
     return (
-        <div>
+        <Container>
+        <div className='text-center'>
             <h3 className='text-center'>Nuevo Estudiante</h3>
             <form onSubmit={store}>
                 <div className='text-center'>
@@ -48,7 +45,7 @@ const CreateStudent = () => {
                             value={idUser}
                             onChange={(e) => setIdUser(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />  
                     </div>
                     <div className='mb-3'>
@@ -57,7 +54,7 @@ const CreateStudent = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -66,7 +63,7 @@ const CreateStudent = () => {
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -75,7 +72,7 @@ const CreateStudent = () => {
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -84,7 +81,7 @@ const CreateStudent = () => {
                             value={sex}
                             onChange={(e) => setSex(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -93,7 +90,7 @@ const CreateStudent = () => {
                             value={curp}
                             onChange={(e) => setCurp(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -102,7 +99,7 @@ const CreateStudent = () => {
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -111,13 +108,14 @@ const CreateStudent = () => {
                             value={tel}
                             onChange={(e) => setTel(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar</button>
                 </div>
             </form>
         </div>
+        </Container>
     )
 }
 
