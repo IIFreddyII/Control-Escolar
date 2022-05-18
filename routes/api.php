@@ -30,7 +30,7 @@ Route::get('/user_index', [PassportAuthController::class, 'index']);
 Route::post('/user_delete/{id}', [PassportAuthController::class, 'destroy']);
 
 
-//School
+/*School*/
 Route::get('/school_index', [SchoolController::class, 'index']);
 Route::post('/school_insert', [SchoolController::class, 'store']);
 Route::get('/school_show/{id}', [SchoolController::class, 'show']);

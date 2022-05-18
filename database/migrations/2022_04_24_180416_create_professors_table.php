@@ -20,10 +20,10 @@ class CreateProfessorsTable extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->enum('sex',['Masculino','Femenino']);
-            $table->string('curp')->unique();;
+            $table->string('curp');
             $table->string('address');
-            $table->string('tel')->unique();
-            $table->string('cedula')->unique();
+            $table->string('tel');
+            $table->string('cedula');
             $table->enum('academic_degree',['Licenciatura','Maestria','Doctorado']);
             $table->string('specialty');
             $table->timestamps();

@@ -2,45 +2,49 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { useHistory, useParams } from "react-router-dom";
 
-const ruta = 'http://localhost:8000/api/school_update/'
+
+const ruta = 'http://127.0.0.1:8000/api/school_update/'
+const ruta2 = 'http://127.0.0.1:8000/api/school_show/'
 
 const EditSchool = () => {
     const [clave, setClave] = useState('')
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
-    const [tel, setTel] = useState(0)
-    const [email, setEmail] = useState(0)
+    const [tel, setTel] = useState('')
+    const [email, setEmail] = useState('')
     const history = useHistory()
+    const {id} = useParams()
 
     const update = async (e) => {
         e.preventDefault()
-        await axios.post(ruta, {
+        await axios.put(`${ruta}${id}`, {
             clave: clave,
             name: name,  
             address: address,
             tel: tel,
             email: email
         })
-        history('/')
+        history.push('/showSchool')
     }
     
 
     useEffect( () =>{
-        const getSchool_updateById = async (id) => {
-            const response = await axios.get(`${ruta}${id}`)
+        const getSchoolById = async () => {
+            const response = await axios.get(`${ruta2}${id}`)
             setClave(response.data.clave)
             setName(response.data.name)
             setAddress(response.data.address)
             setTel(response.data.tel)
             setEmail(response.data.email)
         }
-        getSchool_updateById()
+        getSchoolById()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         
     }, [] )
 
     return (
         <div>
-        <h3 className='text-center'>Editar Escuela</h3>
+        <h3 className='text-center'>Nueva Escuela</h3>
         <form onSubmit={update}>
             <div className='text-center'>
             <div className='mb-3'>
@@ -49,7 +53,7 @@ const EditSchool = () => {
                     value={clave}
                     onChange={ (e)=> setClave(e.target.value)}
                     type='text'
-                    className='form-control'
+                    className='form-control text-center'
                 />
             </div>
             <div className='mb-3'>
@@ -58,7 +62,7 @@ const EditSchool = () => {
                     value={name}
                     onChange={ (e)=> setName(e.target.value)}
                     type='text'
-                    className='form-control'
+                    className='form-control text-center'
                 />
             </div>
             <div className='mb-3'>
@@ -67,7 +71,7 @@ const EditSchool = () => {
                     value={address}
                     onChange={ (e)=> setAddress(e.target.value)}
                     type='text'
-                    className='form-control'
+                    className='form-control text-center'
                 />
             </div>
             <div className='mb-3'>
@@ -75,8 +79,8 @@ const EditSchool = () => {
                 <input 
                     value={tel}
                     onChange={ (e)=> setTel(e.target.value)}
-                    type='number'
-                    className='form-control'
+                    type='text'
+                    className='form-control text-center'
                 />
             </div>
             <div className='mb-3'>
@@ -84,8 +88,8 @@ const EditSchool = () => {
                 <input 
                     value={email}
                     onChange={ (e)=> setEmail(e.target.value)}
-                    type='number'
-                    className='form-control'
+                    type='email'
+                    className='form-control text-center'
                 />
             </div>
             <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>

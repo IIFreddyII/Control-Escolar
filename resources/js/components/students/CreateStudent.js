@@ -7,15 +7,15 @@ import Select from 'react-select'
 
 
 const ruta = 'http://localhost:8000/api/student_insert';
-const ruta2 = 'http://localhost:8000/api';
+
 
 const CreateStudent = () => {
 
-    const [idUser, setIdUser] = useState()
+    const [idUser, setIdUser] = useState('')
     const [name, setName] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
-    const [sex, setSex] = useState('Masculino')
+    const [sex, setSex] = useState('')
     const [curp, setCurp] = useState('')
     const [address, setAddress] = useState('')
     const [tel, setTel] = useState('')
@@ -37,24 +37,6 @@ const CreateStudent = () => {
         history.push('/showStudent')
     }
 
-    const [users, setUsers] = useState([])
-
-    useEffect(() => {
-        getAllUser()
-    }, [])
-
-    const getAllUser = async () => {
-        const response = await axios.get(`${ruta2}/user_index`)
-        setUsers(response.data)
-        //console.log(response.data);
-    }
-
-
-    const options = [
-        { value: 'Masculino', label: 'Masculino' },
-        { value: 'Femenino', label: 'Femenino' }
-      ]
-
     return (
         <div>
             <h3 className='text-center'>Nuevo Estudiante</h3>
@@ -62,18 +44,12 @@ const CreateStudent = () => {
                 <div className='text-center'>
                     <div className='mb-3'>
                         <label className='form-label'>Usuario</label>
-
-                        <select name='Users' className='form-control'>
-                            {users.map((user) => (
-                                <option
-                                    key={user.id}
-                                    value={idUser}
-                                    label={user.id} 
-                                    onChange={(e) => setIdUser(e.target.value)}>
-                                    {user.email}
-                                </option>
-                            ))}
-                        </select>
+                        <input
+                            value={idUser}
+                            onChange={(e) => setIdUser(e.target.value)}
+                            type='text'
+                            className='form-control'
+                        />  
                     </div>
                     <div className='mb-3'>
                         <label className='form-label'>Nombre</label>
@@ -104,7 +80,6 @@ const CreateStudent = () => {
                     </div>
                     <div className='mb-3'>
                         <label className='form-label'>Sexo</label>
-                        <Select options={options}/>
                         <input
                             value={sex}
                             onChange={(e) => setSex(e.target.value)}

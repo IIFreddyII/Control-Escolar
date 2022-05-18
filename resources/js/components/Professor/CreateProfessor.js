@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 import Select from 'react-select'
 
@@ -43,10 +44,8 @@ const CreateProfessor = () => {
         history.push('/showProfessor')
     }
 
-   
-
     return (
-        <div>
+        <Container>
             <h3 className='text-center'>Nuevo Profesor</h3>
             <form onSubmit={store}>
                 <div className='text-center'>
@@ -56,7 +55,7 @@ const CreateProfessor = () => {
                             value={idUser}
                             onChange={(e) => setIdUser(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -65,7 +64,7 @@ const CreateProfessor = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -74,7 +73,7 @@ const CreateProfessor = () => {
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -83,7 +82,7 @@ const CreateProfessor = () => {
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -92,7 +91,7 @@ const CreateProfessor = () => {
                             value={sex}
                             onChange={(e) => setSex(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -101,7 +100,7 @@ const CreateProfessor = () => {
                             value={curp}
                             onChange={(e) => setCurp(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -110,7 +109,7 @@ const CreateProfessor = () => {
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -119,7 +118,7 @@ const CreateProfessor = () => {
                             value={tel}
                             onChange={(e) => setTel(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -128,7 +127,7 @@ const CreateProfessor = () => {
                             value={cedula}
                             onChange={(e) => setCedula(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -137,7 +136,7 @@ const CreateProfessor = () => {
                             value={academic_degree}
                             onChange={(e) => setAcademic_degree(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <div className='mb-3'>
@@ -146,13 +145,13 @@ const CreateProfessor = () => {
                             value={specialty}
                             onChange={(e) => setSpecialty(e.target.value)}
                             type='text'
-                            className='form-control'
+                            className='form-control text-center'
                         />
                     </div>
                     <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar</button>
                 </div>
             </form>
-        </div>
+        </Container>
     )
 }
 

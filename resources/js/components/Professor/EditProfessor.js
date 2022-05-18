@@ -1,96 +1,175 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 
-const ruta = 'http://localhost:8000/api/student_update/'
+const ruta = 'http://localhost:8000/api/professor_update/'
+const ruta2 = 'http://localhost:8000/api/professor_show/'
 
 const EditProfessor = () => {
+    const [idUser, setIdUser] = useState('')
     const [name, setName] = useState('')
-    const [sexuality, setSexuality] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [sex, setSex] = useState('')
+    const [curp, setCurp] = useState('')
     const [address, setAddress] = useState('')
-    const [age, setAge] = useState(0)
-    const [ncar, setNcar] = useState(0)
-    const {id} = useParams()
+    const [tel, setTel] = useState('')
+    const [cedula, setCedula] = useState('')
+    const [academic_degree, setAcademic_degree] = useState('')
+    const [specialty, setSpecialty] = useState('')
+
+    const history = useHistory()
+    const { id } = useParams()
 
     const update = async (e) => {
         e.preventDefault()
         await axios.put(`${ruta}${id}`, {
-            name: name, 
-            sexuality: sexuality, 
+            idUser: idUser,
+            name: name,
+            firstName: firstName,
+            lastName: lastName,
+            sex: sex,
+            curp: curp,
             address: address,
-            age: age,
-            ncar: ncar
+            tel: tel,
+            cedula: cedula,
+            academic_degree: academic_degree,
+            specialty: specialty
         })
-        history('/')
+        history.push('/showProfessor')
     }
-    useEffect( () =>{
-        const getStudent_updateById = async () => {
-            const response = await axios.get(`${ruta}${id}`)
+    useEffect(() => {
+        const getProfessorById = async () => {
+            const response = await axios.get(`${ruta2}${id}`)
+            setIdUser(response.data.idUser)
             setName(response.data.name)
-            setSexuality(response.data.sexuality)
+            setFirstName(response.data.firstName)
+            setLastName(response.data.lastName)
+            setSex(response.data.sex)
+            setCurp(response.data.curp)
             setAddress(response.data.address)
-            setAge(response.data.age)
-            setNcar(response.data.ncar)
-            
+            setTel(response.data.tel)
+            setCedula(response.data.cedula)
+            setAcademic_degree(response.data.academic_degree)
+            setSpecialty(response.data.specialty)
         }
-        getStudent_updateById()
-        
-    }, [] )
+        getProfessorById()
+
+    }, [])
 
     return (
-        <div>
-        <h3 className='text-center'>Editar Estudiante</h3>
-        <form onSubmit={update}>
-            <div className='text-center'>
-            <div className='mb-3'>
-                <label className='form-label'>Nombre</label>
-                <input 
-                    value={name}
-                    onChange={ (e)=> setName(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
+
+        <Container>
+            <div>
+                <h3 className='text-center'>Actualizar Datos de Profesor</h3>
+                <form onSubmit={update}>
+                    <div className='text-center'>
+                        <div className='mb-3'>
+                            <label className='form-label'>Usuario</label>
+                            <input
+                                value={idUser}
+                                onChange={(e) => setIdUser(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Nombre</label>
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Apellido Materno</label>
+                            <input
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Apellido Paterno</label>
+                            <input
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Sexo</label>
+                            <input
+                                value={sex}
+                                onChange={(e) => setSex(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>CURP</label>
+                            <input
+                                value={curp}
+                                onChange={(e) => setCurp(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Direccion</label>
+                            <input
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Telefono</label>
+                            <input
+                                value={tel}
+                                onChange={(e) => setTel(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Cedula Profesional</label>
+                            <input
+                                value={cedula}
+                                onChange={(e) => setCedula(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Grado Academico</label>
+                            <input
+                                value={academic_degree}
+                                onChange={(e) => setAcademic_degree(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Especialidad</label>
+                            <input
+                                value={specialty}
+                                onChange={(e) => setSpecialty(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
+                    </div>
+                </form>
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Sexo</label>
-                <input 
-                    value={sexuality}
-                    onChange={ (e)=> setSexuality(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Direccion</label>
-                <input 
-                    value={address}
-                    onChange={ (e)=> setAddress(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Edad</label>
-                <input 
-                    value={age}
-                    onChange={ (e)=> setAge(e.target.value)}
-                    type='number'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Numero de Carrera</label>
-                <input 
-                    value={ncar}
-                    onChange={ (e)=> setNcar(e.target.value)}
-                    type='number'
-                    className='form-control'
-                />
-            </div>
-            <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
-            </div>
-        </form>
-    </div>
+        </Container>
+
     )
 }
 

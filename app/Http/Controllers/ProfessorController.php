@@ -77,7 +77,7 @@ class ProfessorController extends Controller
    
     public function update(Request $request, $id)
     {
-        /*validacion de los campos*/
+        /*validacion de los campos
         $validator = Validator::make($request->all(), [
             'idUser' => 'required',
             'name' => 'required',
@@ -92,11 +92,12 @@ class ProfessorController extends Controller
             'specialty' => 'required',
 
         ]);
-
+        
         if($validator->fails()){
             return $validator->errors();
         }
 
+        */
         $professor = Professor::find($id);
         $professor->idUser = $request->idUser;
         $professor->name = $request->name;

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 
+
 const ruta = 'http://localhost:8000/api';
 const ShowProfessor = () => {
     const [professors, setProfessors] = useState([])
@@ -71,8 +72,6 @@ const ShowProfessor = () => {
                 <Link to="/createProfessor" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar nuevo Profesor</Link>
             </div>
         </div>
-
-
     )
 }
 

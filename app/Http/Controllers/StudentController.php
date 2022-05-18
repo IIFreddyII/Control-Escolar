@@ -71,7 +71,7 @@ class StudentController extends Controller
     
     public function update(Request $request, $id)
     {
-        /*validacion de los campos*/
+        /*validacion de los campos
         $validator = Validator::make($request->all(), [
             'idUser' => 'required',
             'name' => 'required',
@@ -87,7 +87,7 @@ class StudentController extends Controller
         if($validator->fails()){
             return $validator->errors();
         }
-
+        */
         $student = Student::find($id);
         $student->idUser = $request->idUser;
         $student->name = $request->name;
