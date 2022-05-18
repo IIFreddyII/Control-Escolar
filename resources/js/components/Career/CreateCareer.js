@@ -1,5 +1,6 @@
 import axios from 'axios'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 
@@ -17,59 +18,61 @@ const CreateCareer = () => {
         e.preventDefault()
         await axios.post(ruta, {
             clave: clave,
-            name: name,  
+            name: name,
             area: area,
             idSchool: idSchool
         })
         history.push('/showCareer')
     }
-    
-  return (
-    <div>
-        <h3 className='text-center'>Nueva Carrera</h3>
-        <form onSubmit={store}>
-            <div className='text-center'>
-            <div className='mb-3'>
-                <label className='form-label'>Clave</label>
-                <input 
-                    value={clave}
-                    onChange={ (e)=> setClave(e.target.value)}
-                    type='text'
-                    className='form-control text-center'
-                />
+
+    return (
+        <Container>
+            <div>
+                <h3 className='text-center'>Nueva Carrera</h3>
+                <form onSubmit={store}>
+                    <div className='text-center'>
+                        <div className='mb-3'>
+                            <label className='form-label'>Clave</label>
+                            <input
+                                value={clave}
+                                onChange={(e) => setClave(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Nombre</label>
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type='text'
+                                className='form-control'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Area</label>
+                            <input
+                                value={area}
+                                onChange={(e) => setArea(e.target.value)}
+                                type='text'
+                                className='form-control'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Clave de Escuela</label>
+                            <input
+                                value={idSchool}
+                                onChange={(e) => setIdSchool(e.target.value)}
+                                type='text'
+                                className='form-control'
+                            />
+                        </div>
+                        <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar</button>
+                    </div>
+                </form>
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Nombre</label>
-                <input 
-                    value={name}
-                    onChange={ (e)=> setName(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Area</label>
-                <input 
-                    value={area}
-                    onChange={ (e)=> setArea(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Clave de Escuela</label>
-                <input 
-                    value={idSchool}
-                    onChange={ (e)=> setIdSchool(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar</button>
-            </div>
-        </form>
-    </div>
-  )
+        </Container>
+    )
 }
 
 export default CreateCareer;

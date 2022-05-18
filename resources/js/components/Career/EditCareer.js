@@ -1,97 +1,91 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 
-const ruta = 'http://localhost:8000/api/school_update/'
+const ruta = 'http://localhost:8000/api/career_update/'
+const ruta2 = 'http://localhost:8000/api/career_show/'
 
 const EditCareer = () => {
     const [clave, setClave] = useState('')
     const [name, setName] = useState('')
-    const [address, setAddress] = useState('')
-    const [tel, setTel] = useState(0)
-    const [email, setEmail] = useState(0)
+    const [area, setArea] = useState('')
+    const [idSchool, setIdSchool] = useState('')
     const history = useHistory()
+    const { id } = useParams()
 
     const update = async (e) => {
         e.preventDefault()
-        await axios.post(ruta, {
+        await axios.put(`${ruta}${id}`, {
             clave: clave,
-            name: name,  
-            address: address,
-            tel: tel,
-            email: email
+            name: name,
+            area: area,
+            idSchool: idSchool
         })
-        history('/showCareer')
+        history.push('/showCareer')
     }
-    
 
-    useEffect( () =>{
-        const getSchool_updateById = async (id) => {
-            const response = await axios.get(`${ruta}${id}`)
+
+    useEffect(() => {
+        const getCareerById = async () => {
+            const response = await axios.get(`${ruta2}${id}`)
             setClave(response.data.clave)
             setName(response.data.name)
-            setAddress(response.data.address)
-            setTel(response.data.tel)
-            setEmail(response.data.email)
+            setArea(response.data.area)
+            setIdSchool(response.data.idSchool)
         }
-        getSchool_updateById()
-        
-    }, [] )
+        getCareerById()
+
+    }, [])
 
     return (
-        <div>
-        <h3 className='text-center'>Editar Escuela</h3>
-        <form onSubmit={update}>
-            <div className='text-center'>
-            <div className='mb-3'>
-                <label className='form-label'>Clave</label>
-                <input 
-                    value={clave}
-                    onChange={ (e)=> setClave(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
+        <Container>
+            <div>
+                <h3 className='text-center'>Actualizar Carrera</h3>
+                <form onSubmit={update}>
+                    <div className='text-center'>
+                        <div className='mb-3'>
+                            <label className='form-label'>Clave</label>
+                            <input
+                                value={clave}
+                                onChange={(e) => setClave(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Nombre</label>
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Area</label>
+                            <input
+                                value={area}
+                                onChange={(e) => setArea(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Clave de Escuela</label>
+                            <input
+                                value={idSchool}
+                                onChange={(e) => setIdSchool(e.target.value)}
+                                type='number'
+                                className='form-control text-center'
+                                min='1'
+                            />
+                        </div>
+                        <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
+                    </div>
+                </form>
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Nombre</label>
-                <input 
-                    value={name}
-                    onChange={ (e)=> setName(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Direccion</label>
-                <input 
-                    value={address}
-                    onChange={ (e)=> setAddress(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Telefono</label>
-                <input 
-                    value={tel}
-                    onChange={ (e)=> setTel(e.target.value)}
-                    type='number'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Correo</label>
-                <input 
-                    value={email}
-                    onChange={ (e)=> setEmail(e.target.value)}
-                    type='number'
-                    className='form-control'
-                />
-            </div>
-            <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
-            </div>
-        </form>
-    </div>
+        </Container>
     )
 }
 

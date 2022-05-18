@@ -60,7 +60,7 @@ class GroupController extends Controller
 
     public function update(Request $request, $id)
     {
-        /*validacion de los campos*/
+        /*validacion de los campos
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:groups,name',
             'size' => 'required',
@@ -70,7 +70,7 @@ class GroupController extends Controller
         if($validator->fails()){
             return $validator->errors();
         }
-
+        */
         $group = Group::find($id);
         $group->name = $request->name;
         $group->size = $request->size;

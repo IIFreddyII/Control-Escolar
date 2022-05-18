@@ -43,7 +43,7 @@ const ShowSemester = () => {
                             <td> {semester.name} </td>
                             <td> {semester.period} </td>
                             <td>
-                                <Link to={`/editSchool/${semester.id}`} className='btn btn-warning'>Editar</Link>
+                                <Link to={`/editSemester/${semester.id}`} className='btn btn-warning'>Editar</Link>
                                 <button onClick={() => deleteSemesters(semester.id)} className='btn btn-danger'>Eliminar</button>
                             </td>
 

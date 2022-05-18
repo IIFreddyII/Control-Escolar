@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 
 const ruta = 'http://localhost:8000/api/student_update/'
@@ -31,7 +32,7 @@ const EditStudent = () => {
         })
         history.push('/showStudent')
     }
-    
+
     useEffect(() => {
         const getStudentById = async () => {
             const response = await axios.get(`${ruta2}${id}`)
@@ -49,86 +50,88 @@ const EditStudent = () => {
     }, [])
 
     return (
-        <div>
-            <h3 className='text-center'>Nuevo Estudiante</h3>
-            <form onSubmit={update}>
-                <div className='text-center'>
-                    <div className='mb-3'>
-                        <label className='form-label'>Usuario</label>
-                        <input
-                            value={idUser}
-                            onChange={(e) => setIdUser(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
+        <Container>
+            <div>
+                <h3 className='text-center'>Nuevo Estudiante</h3>
+                <form onSubmit={update}>
+                    <div className='text-center'>
+                        <div className='mb-3'>
+                            <label className='form-label'>Usuario</label>
+                            <input
+                                value={idUser}
+                                onChange={(e) => setIdUser(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Nombre</label>
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Apellido Materno</label>
+                            <input
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Apellido Paterno</label>
+                            <input
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Sexo</label>
+                            <input
+                                value={sex}
+                                onChange={(e) => setSex(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>CURP</label>
+                            <input
+                                value={curp}
+                                onChange={(e) => setCurp(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Direccion</label>
+                            <input
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Telefono</label>
+                            <input
+                                value={tel}
+                                onChange={(e) => setTel(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
                     </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>Nombre</label>
-                        <input
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>Apellido Materno</label>
-                        <input
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>Apellido Paterno</label>
-                        <input
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>Sexo</label>
-                        <input
-                            value={sex}
-                            onChange={(e) => setSex(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>CURP</label>
-                        <input
-                            value={curp}
-                            onChange={(e) => setCurp(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>Direccion</label>
-                        <input
-                            value={address}
-                            onChange={(e) => setAddress(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <div className='mb-3'>
-                        <label className='form-label'>Telefono</label>
-                        <input
-                            value={tel}
-                            onChange={(e) => setTel(e.target.value)}
-                            type='text'
-                            className='form-control'
-                        />
-                    </div>
-                    <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </Container>
     )
 }
 

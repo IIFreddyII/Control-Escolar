@@ -57,8 +57,6 @@ const ShowCareer = () => {
                 <Link to="/createCareer" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar Nueva Carrera</Link>
             </div>
         </div>
-
-
     )
 }
 

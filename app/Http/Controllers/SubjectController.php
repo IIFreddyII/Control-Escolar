@@ -60,7 +60,7 @@ class SubjectController extends Controller
     
     public function update(Request $request)
     {
-        /*validacion de los campos*/
+        /*validacion de los campos
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:45|unique:subjects,name',
             'credit' => 'required|max:1',
@@ -70,7 +70,8 @@ class SubjectController extends Controller
         if($validator->fails()){
             return $validator->errors();
         }
-
+        */
+        
         $subject = Subject::find($request->id);
         $subject->name = $request->name;
         $subject->credit = $request->credit;

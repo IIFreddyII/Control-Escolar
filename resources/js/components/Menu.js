@@ -48,7 +48,7 @@ const Menu = () => {
             <div>
                 <Nav/>
                 <Switch>
-                    <Route exact path="/menu" component={HomePage} />
+                    <Route exact path="/" component={HomePage} />
                     <Route exact path="/HomePage" component={HomePage} />
                     <Route exact path="/login" component={Login} />
 

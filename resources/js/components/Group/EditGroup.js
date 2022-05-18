@@ -1,97 +1,81 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 
-const ruta = 'http://localhost:8000/api/school_update/'
+const ruta = 'http://localhost:8000/api/group_update/'
+const ruta2 = 'http://localhost:8000/api/group_show/'
 
 const EditGroup = () => {
-    const [clave, setClave] = useState('')
     const [name, setName] = useState('')
-    const [address, setAddress] = useState('')
-    const [tel, setTel] = useState(0)
-    const [email, setEmail] = useState(0)
+    const [size, setSize] = useState('15')
+    const [idCar, setIdCar] = useState('1')
     const history = useHistory()
+    const { id } = useParams()
 
     const update = async (e) => {
         e.preventDefault()
-        await axios.post(ruta, {
-            clave: clave,
+        await axios.put(`${ruta}${id}`, {
             name: name,  
-            address: address,
-            tel: tel,
-            email: email
+            size: size,
+            idCar: idCar,
         })
-        history('/showCareer')
+        history.push('/showGroup')
     }
     
 
     useEffect( () =>{
-        const getSchool_updateById = async (id) => {
-            const response = await axios.get(`${ruta}${id}`)
-            setClave(response.data.clave)
+        const getGroupById = async () => {
+            const response = await axios.get(`${ruta2}${id}`)
             setName(response.data.name)
-            setAddress(response.data.address)
-            setTel(response.data.tel)
-            setEmail(response.data.email)
+            setSize(response.data.size)
+            setIdCar(response.data.idCar)
         }
-        getSchool_updateById()
+        getGroupById()
         
     }, [] )
 
     return (
-        <div>
-        <h3 className='text-center'>Editar Escuela</h3>
-        <form onSubmit={update}>
-            <div className='text-center'>
-            <div className='mb-3'>
-                <label className='form-label'>Clave</label>
-                <input 
-                    value={clave}
-                    onChange={ (e)=> setClave(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
+        <Container>
+            <div>
+                <h3 className='text-center'>Actualizar Grupo</h3>
+                <form onSubmit={update}>
+                    <div className='text-center'>
+                        <div className='mb-3'>
+                            <label className='form-label'>Nombre</label>
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Tamaño</label>
+                            <input
+                                value={size}
+                                onChange={(e) => setSize(e.target.value)}
+                                type='number'
+                                className='form-control text-center'
+                                min="15"
+                                max="45"
+                            />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Clave de la Carrera</label>
+                            <input
+                                value={idCar}
+                                onChange={(e) => setIdCar(e.target.value)}
+                                type='text'
+                                className='form-control text-center'
+                            />
+                        </div>
+                        <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
+                    </div>
+                </form>
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Nombre</label>
-                <input 
-                    value={name}
-                    onChange={ (e)=> setName(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Direccion</label>
-                <input 
-                    value={address}
-                    onChange={ (e)=> setAddress(e.target.value)}
-                    type='text'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Telefono</label>
-                <input 
-                    value={tel}
-                    onChange={ (e)=> setTel(e.target.value)}
-                    type='number'
-                    className='form-control'
-                />
-            </div>
-            <div className='mb-3'>
-                <label className='form-label'>Correo</label>
-                <input 
-                    value={email}
-                    onChange={ (e)=> setEmail(e.target.value)}
-                    type='number'
-                    className='form-control'
-                />
-            </div>
-            <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
-            </div>
-        </form>
-    </div>
+        </Container>
+
     )
 }
 

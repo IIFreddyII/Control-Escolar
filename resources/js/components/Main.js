@@ -16,9 +16,9 @@ function Main() {
     return (
         <BrowserRouter>
             <div>
-                <NavLog/>
+                
                 <Switch>
-                    <Route exact path="/" component={Login} />
+                    <Route exact path="/" component={Register} />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/Register" component={Register} />
                     <Route exact path="/menu" component={Menu} />

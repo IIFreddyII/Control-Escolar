@@ -31,7 +31,6 @@ const ShowUser = () => {
                         <tr>
                             <th>ID</th>
                             <th>Correo</th>
-                            <th>Password</th>
                             <th>type</th>
                             <th></th>
                         </tr>
@@ -41,7 +40,6 @@ const ShowUser = () => {
                             <tr key={user.id}>
                                 <td> {user.id} </td>
                                 <td> {user.email} </td>
-                                <td> {user.password} </td>
                                 <td> {user.type} </td>
                                 <td>
                                     <button onClick={() => deleteUser(user.id)} className='btn btn-danger'>Eliminar</button>
