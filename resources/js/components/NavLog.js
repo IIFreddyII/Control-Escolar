@@ -15,7 +15,7 @@ const NavLog = () => {
                     <Nav className="me-auto">
                     </Nav>
                     <Nav>
-                        <Nav.Link as={Link} to="/Login">
+                        <Nav.Link as={Link} to="/">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png" height={'30px'}
                             />

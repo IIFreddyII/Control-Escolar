@@ -95,7 +95,7 @@ Route::put('/professorSubject_update/{id}', [ProfessorSubjectController::class, 
 Route::post('/professorSubject_delete/{id}', [ProfessorSubjectController::class, 'destroy']);
 
 
-Route::middleware('auth:api')->group(function () {
-    
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
 

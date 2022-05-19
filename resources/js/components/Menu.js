@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Nav from './Nav';
 import Login from './auth/Login';
+import Register from './auth/Register';
 
 import HomePage from './HomePage'
 
@@ -40,15 +41,18 @@ import EditProfessor from './Professor/EditProfessor';
 import CreateProfessor from './Professor/CreateProfessor';
 
 import ShowNotes from './Notes/ShowNotes';
+import Navigation from './Nav';
 
 
 const Menu = () => {
     return (
         <BrowserRouter>
             <div>
-                <Nav/>
+                <Navigation />
                 <Switch>
-                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/" component={Login} />
+                    <Route exact path="/Register" component={Register} />
+
                     <Route exact path="/HomePage" component={HomePage} />
                     <Route exact path="/login" component={Login} />
 
@@ -58,7 +62,7 @@ const Menu = () => {
                     <Route exact path="/showStudent" component={ShowStudent} />
                     <Route exact path="/editStudent/:id" component={EditStudent} />
                     <Route exact path="/createStudent" component={CreateStudent} />
-                    
+
                     <Route exact path="/showSchool" component={ShowSchool} />
                     <Route exact path="/editSchool/:id" component={EditSchool} />
                     <Route exact path="/createSchool" component={CreateSchool} />

@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import { BrowserRouter } from 'react-router-dom';
 
-import NavLog from './NavLog';
+
 import Login from './auth/Login';
 import Register from './auth/Register';
 import Menu from './Menu';
+import Navigation from './Nav';
 
 
 
@@ -16,10 +17,9 @@ function Main() {
     return (
         <BrowserRouter>
             <div>
-                
+                <Navigation/>
                 <Switch>
-                    <Route exact path="/" component={Register} />
-                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/" component={Login} />
                     <Route exact path="/Register" component={Register} />
                     <Route exact path="/menu" component={Menu} />
                 </Switch>
