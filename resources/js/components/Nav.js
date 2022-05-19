@@ -4,17 +4,17 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 const Navigation = () => {
 
-    let user = JSON.parse(localStorage.getItem('user-info'))
+    let users = JSON.parse(localStorage.getItem('user-info'))
     const history = useHistory();
     function logOut() {
         localStorage.clear();
-        history.push('/Login');
+        history.push('/');
     }
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to="/homePage">
+                <Navbar.Brand as={Link} to="/HomePage">
                     <img
                         src="https://cdn-icons-png.flaticon.com/512/4207/4207247.png" height={'50px'}
                     />
@@ -27,7 +27,6 @@ const Navigation = () => {
                     {
                         localStorage.getItem('user-info') ?
                             <>
-
                                 <Nav>
                                     <Nav.Link onClick={logOut}>
                                         <img
@@ -40,7 +39,7 @@ const Navigation = () => {
                             :
                             <>
                                 <Nav>
-                                    <Nav.Link as={Link} to="/">
+                                    <Nav.Link as={Link} to="/Login">
                                         <img
                                             src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png" height={'30px'}
                                         />

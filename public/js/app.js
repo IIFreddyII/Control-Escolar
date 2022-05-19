@@ -8532,38 +8532,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./resources/js/components/Nav.js");
-/* harmony import */ var _auth_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth/Login */ "./resources/js/components/auth/Login.js");
-/* harmony import */ var _auth_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth/Register */ "./resources/js/components/auth/Register.js");
-/* harmony import */ var _HomePage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./HomePage */ "./resources/js/components/HomePage.js");
-/* harmony import */ var _user_RegisterUser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user/RegisterUser */ "./resources/js/components/user/RegisterUser.js");
-/* harmony import */ var _user_ShowUser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user/ShowUser */ "./resources/js/components/user/ShowUser.js");
-/* harmony import */ var _students_ShowStudent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./students/ShowStudent */ "./resources/js/components/students/ShowStudent.js");
-/* harmony import */ var _students_EditStudent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./students/EditStudent */ "./resources/js/components/students/EditStudent.js");
-/* harmony import */ var _students_CreateStudent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./students/CreateStudent */ "./resources/js/components/students/CreateStudent.js");
-/* harmony import */ var _school_ShowSchool__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./school/ShowSchool */ "./resources/js/components/school/ShowSchool.js");
-/* harmony import */ var _school_EditSchool__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./school/EditSchool */ "./resources/js/components/school/EditSchool.js");
-/* harmony import */ var _school_CreateSchool__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./school/CreateSchool */ "./resources/js/components/school/CreateSchool.js");
-/* harmony import */ var _Career_ShowCareer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Career/ShowCareer */ "./resources/js/components/Career/ShowCareer.js");
-/* harmony import */ var _Career_EditCareer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Career/EditCareer */ "./resources/js/components/Career/EditCareer.js");
-/* harmony import */ var _Career_CreateCareer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Career/CreateCareer */ "./resources/js/components/Career/CreateCareer.js");
-/* harmony import */ var _Group_ShowGroup__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Group/ShowGroup */ "./resources/js/components/Group/ShowGroup.js");
-/* harmony import */ var _Group_EditGroup__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Group/EditGroup */ "./resources/js/components/Group/EditGroup.js");
-/* harmony import */ var _Group_CreateGroup__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Group/CreateGroup */ "./resources/js/components/Group/CreateGroup.js");
-/* harmony import */ var _semester_ShowSemester__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./semester/ShowSemester */ "./resources/js/components/semester/ShowSemester.js");
-/* harmony import */ var _semester_CreateSemester__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./semester/CreateSemester */ "./resources/js/components/semester/CreateSemester.js");
-/* harmony import */ var _semester_EditSemester__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./semester/EditSemester */ "./resources/js/components/semester/EditSemester.js");
-/* harmony import */ var _Subject_ShowSubject__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Subject/ShowSubject */ "./resources/js/components/Subject/ShowSubject.js");
-/* harmony import */ var _Subject_CreateSubject__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./Subject/CreateSubject */ "./resources/js/components/Subject/CreateSubject.js");
-/* harmony import */ var _Subject_EditSubject__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./Subject/EditSubject */ "./resources/js/components/Subject/EditSubject.js");
-/* harmony import */ var _Professor_ShowProfessor__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./Professor/ShowProfessor */ "./resources/js/components/Professor/ShowProfessor.js");
-/* harmony import */ var _Professor_EditProfessor__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./Professor/EditProfessor */ "./resources/js/components/Professor/EditProfessor.js");
-/* harmony import */ var _Professor_CreateProfessor__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./Professor/CreateProfessor */ "./resources/js/components/Professor/CreateProfessor.js");
-/* harmony import */ var _Notes_ShowNotes__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./Notes/ShowNotes */ "./resources/js/components/Notes/ShowNotes.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _auth_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth/Login */ "./resources/js/components/auth/Login.js");
+/* harmony import */ var _auth_Register__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth/Register */ "./resources/js/components/auth/Register.js");
+/* harmony import */ var _HomePage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HomePage */ "./resources/js/components/HomePage.js");
+/* harmony import */ var _user_RegisterUser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user/RegisterUser */ "./resources/js/components/user/RegisterUser.js");
+/* harmony import */ var _user_ShowUser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user/ShowUser */ "./resources/js/components/user/ShowUser.js");
+/* harmony import */ var _students_ShowStudent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./students/ShowStudent */ "./resources/js/components/students/ShowStudent.js");
+/* harmony import */ var _students_EditStudent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./students/EditStudent */ "./resources/js/components/students/EditStudent.js");
+/* harmony import */ var _students_CreateStudent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./students/CreateStudent */ "./resources/js/components/students/CreateStudent.js");
+/* harmony import */ var _school_ShowSchool__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./school/ShowSchool */ "./resources/js/components/school/ShowSchool.js");
+/* harmony import */ var _school_EditSchool__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./school/EditSchool */ "./resources/js/components/school/EditSchool.js");
+/* harmony import */ var _school_CreateSchool__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./school/CreateSchool */ "./resources/js/components/school/CreateSchool.js");
+/* harmony import */ var _Career_ShowCareer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Career/ShowCareer */ "./resources/js/components/Career/ShowCareer.js");
+/* harmony import */ var _Career_EditCareer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Career/EditCareer */ "./resources/js/components/Career/EditCareer.js");
+/* harmony import */ var _Career_CreateCareer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Career/CreateCareer */ "./resources/js/components/Career/CreateCareer.js");
+/* harmony import */ var _Group_ShowGroup__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Group/ShowGroup */ "./resources/js/components/Group/ShowGroup.js");
+/* harmony import */ var _Group_EditGroup__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Group/EditGroup */ "./resources/js/components/Group/EditGroup.js");
+/* harmony import */ var _Group_CreateGroup__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Group/CreateGroup */ "./resources/js/components/Group/CreateGroup.js");
+/* harmony import */ var _semester_ShowSemester__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./semester/ShowSemester */ "./resources/js/components/semester/ShowSemester.js");
+/* harmony import */ var _semester_CreateSemester__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./semester/CreateSemester */ "./resources/js/components/semester/CreateSemester.js");
+/* harmony import */ var _semester_EditSemester__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./semester/EditSemester */ "./resources/js/components/semester/EditSemester.js");
+/* harmony import */ var _Subject_ShowSubject__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Subject/ShowSubject */ "./resources/js/components/Subject/ShowSubject.js");
+/* harmony import */ var _Subject_CreateSubject__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Subject/CreateSubject */ "./resources/js/components/Subject/CreateSubject.js");
+/* harmony import */ var _Subject_EditSubject__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./Subject/EditSubject */ "./resources/js/components/Subject/EditSubject.js");
+/* harmony import */ var _Professor_ShowProfessor__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./Professor/ShowProfessor */ "./resources/js/components/Professor/ShowProfessor.js");
+/* harmony import */ var _Professor_EditProfessor__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./Professor/EditProfessor */ "./resources/js/components/Professor/EditProfessor.js");
+/* harmony import */ var _Professor_CreateProfessor__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./Professor/CreateProfessor */ "./resources/js/components/Professor/CreateProfessor.js");
+/* harmony import */ var _Notes_ShowNotes__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./Notes/ShowNotes */ "./resources/js/components/Notes/ShowNotes.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./Nav */ "./resources/js/components/Nav.js");
+/* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./PrivateRoute */ "./resources/js/components/PrivateRoute.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -8600,121 +8600,121 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Menu = function Menu() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_31__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.HashRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_Nav__WEBPACK_IMPORTED_MODULE_29__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_33__.Switch, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_33__.Route, {
           exact: true,
           path: "/",
-          component: _auth_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
-          exact: true,
-          path: "/Register",
-          component: _auth_Register__WEBPACK_IMPORTED_MODULE_4__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
-          exact: true,
-          path: "/HomePage",
-          component: _HomePage__WEBPACK_IMPORTED_MODULE_5__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _auth_Login__WEBPACK_IMPORTED_MODULE_2__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_33__.Route, {
           exact: true,
           path: "/login",
-          component: _auth_Login__WEBPACK_IMPORTED_MODULE_3__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _auth_Login__WEBPACK_IMPORTED_MODULE_2__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_33__.Route, {
+          exact: true,
+          path: "/Register",
+          component: _auth_Register__WEBPACK_IMPORTED_MODULE_3__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
+          exact: true,
+          path: "/HomePage",
+          component: _HomePage__WEBPACK_IMPORTED_MODULE_4__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showUser",
-          component: _user_ShowUser__WEBPACK_IMPORTED_MODULE_7__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _user_ShowUser__WEBPACK_IMPORTED_MODULE_6__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createUser",
-          component: _user_RegisterUser__WEBPACK_IMPORTED_MODULE_6__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _user_RegisterUser__WEBPACK_IMPORTED_MODULE_5__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showStudent",
-          component: _students_ShowStudent__WEBPACK_IMPORTED_MODULE_8__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _students_ShowStudent__WEBPACK_IMPORTED_MODULE_7__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editStudent/:id",
-          component: _students_EditStudent__WEBPACK_IMPORTED_MODULE_9__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _students_EditStudent__WEBPACK_IMPORTED_MODULE_8__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createStudent",
-          component: _students_CreateStudent__WEBPACK_IMPORTED_MODULE_10__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _students_CreateStudent__WEBPACK_IMPORTED_MODULE_9__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showSchool",
-          component: _school_ShowSchool__WEBPACK_IMPORTED_MODULE_11__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _school_ShowSchool__WEBPACK_IMPORTED_MODULE_10__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editSchool/:id",
-          component: _school_EditSchool__WEBPACK_IMPORTED_MODULE_12__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _school_EditSchool__WEBPACK_IMPORTED_MODULE_11__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createSchool",
-          component: _school_CreateSchool__WEBPACK_IMPORTED_MODULE_13__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _school_CreateSchool__WEBPACK_IMPORTED_MODULE_12__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showCareer",
-          component: _Career_ShowCareer__WEBPACK_IMPORTED_MODULE_14__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Career_ShowCareer__WEBPACK_IMPORTED_MODULE_13__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editCareer/:id",
-          component: _Career_EditCareer__WEBPACK_IMPORTED_MODULE_15__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Career_EditCareer__WEBPACK_IMPORTED_MODULE_14__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createCareer",
-          component: _Career_CreateCareer__WEBPACK_IMPORTED_MODULE_16__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Career_CreateCareer__WEBPACK_IMPORTED_MODULE_15__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showGroup",
-          component: _Group_ShowGroup__WEBPACK_IMPORTED_MODULE_17__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Group_ShowGroup__WEBPACK_IMPORTED_MODULE_16__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editGroup/:id",
-          component: _Group_EditGroup__WEBPACK_IMPORTED_MODULE_18__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Group_EditGroup__WEBPACK_IMPORTED_MODULE_17__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createGroup",
-          component: _Group_CreateGroup__WEBPACK_IMPORTED_MODULE_19__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Group_CreateGroup__WEBPACK_IMPORTED_MODULE_18__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showSemeste",
-          component: _semester_ShowSemester__WEBPACK_IMPORTED_MODULE_20__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _semester_ShowSemester__WEBPACK_IMPORTED_MODULE_19__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editSemester/:id",
-          component: _semester_EditSemester__WEBPACK_IMPORTED_MODULE_22__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _semester_EditSemester__WEBPACK_IMPORTED_MODULE_21__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createSemester",
-          component: _semester_CreateSemester__WEBPACK_IMPORTED_MODULE_21__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _semester_CreateSemester__WEBPACK_IMPORTED_MODULE_20__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showSubject",
-          component: _Subject_ShowSubject__WEBPACK_IMPORTED_MODULE_23__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Subject_ShowSubject__WEBPACK_IMPORTED_MODULE_22__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editSubject/:id",
-          component: _Subject_EditSubject__WEBPACK_IMPORTED_MODULE_25__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Subject_EditSubject__WEBPACK_IMPORTED_MODULE_24__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createSubject",
-          component: _Subject_CreateSubject__WEBPACK_IMPORTED_MODULE_24__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Subject_CreateSubject__WEBPACK_IMPORTED_MODULE_23__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showProfessor",
-          component: _Professor_ShowProfessor__WEBPACK_IMPORTED_MODULE_26__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Professor_ShowProfessor__WEBPACK_IMPORTED_MODULE_25__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/editProfessor/:id",
-          component: _Professor_EditProfessor__WEBPACK_IMPORTED_MODULE_27__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Professor_EditProfessor__WEBPACK_IMPORTED_MODULE_26__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/createProfessor",
-          component: _Professor_CreateProfessor__WEBPACK_IMPORTED_MODULE_28__["default"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_32__.Route, {
+          component: _Professor_CreateProfessor__WEBPACK_IMPORTED_MODULE_27__["default"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_30__["default"], {
           exact: true,
           path: "/showNotes",
-          component: _Notes_ShowNotes__WEBPACK_IMPORTED_MODULE_29__["default"]
+          component: _Notes_ShowNotes__WEBPACK_IMPORTED_MODULE_28__["default"]
         })]
       })]
     })
@@ -8724,7 +8724,7 @@ var Menu = function Menu() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Menu);
 
 if (document.getElementById('main')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_30__.jsx)(Menu, {}), document.getElementById('main'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_31__.jsx)(Menu, {}), document.getElementById('main'));
 }
 
 /***/ }),
@@ -8756,12 +8756,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Navigation = function Navigation() {
-  var user = JSON.parse(localStorage.getItem('user-info'));
+  var users = JSON.parse(localStorage.getItem('user-info'));
   var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useHistory)();
 
   function logOut() {
     localStorage.clear();
-    history.push('/Login');
+    history.push('/');
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -8772,7 +8772,7 @@ var Navigation = function Navigation() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"].Brand, {
         as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-        to: "/homePage",
+        to: "/HomePage",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           src: "https://cdn-icons-png.flaticon.com/512/4207/4207247.png",
           height: '50px'
@@ -8797,7 +8797,7 @@ var Navigation = function Navigation() {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"].Link, {
               as: react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link,
-              to: "/",
+              to: "/Login",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
                 src: "https://cdn-icons-png.flaticon.com/512/1828/1828466.png",
                 height: '30px'
@@ -8982,6 +8982,52 @@ var ShowNotes = function ShowNotes() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ShowNotes);
+
+/***/ }),
+
+/***/ "./resources/js/components/PrivateRoute.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/PrivateRoute.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["component"];
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+
+var PrivateRoute = function PrivateRoute(_ref) {
+  var Component = _ref.component,
+      rest = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, _objectSpread(_objectSpread({}, rest), {}, {
+    children: localStorage.getItem('user-info') ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Component, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Redirect, {
+      to: "Login"
+    })
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PrivateRoute);
 
 /***/ }),
 
@@ -10508,7 +10554,7 @@ var Login = function Login() {
         onClick: login,
         type: "submit",
         className: "btn btn-primary",
-        children: " Sign Up"
+        children: " Login"
       })
     })]
   });

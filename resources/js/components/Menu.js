@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, } from "react-router-dom";
 
-import Nav from './Nav';
+
+
 import Login from './auth/Login';
 import Register from './auth/Register';
 
@@ -42,56 +42,61 @@ import CreateProfessor from './Professor/CreateProfessor';
 
 import ShowNotes from './Notes/ShowNotes';
 import Navigation from './Nav';
+import PrivateRoute from './PrivateRoute';
+
+
 
 
 const Menu = () => {
     return (
-        <BrowserRouter>
+        <Router>
             <div>
-                <Navigation />
+                <Navigation/>
                 <Switch>
+
                     <Route exact path="/" component={Login} />
+                    <Route exact path="/login" component={Login} />
                     <Route exact path="/Register" component={Register} />
 
-                    <Route exact path="/HomePage" component={HomePage} />
-                    <Route exact path="/login" component={Login} />
+                    <PrivateRoute exact path="/HomePage" component={HomePage}/>
+                    
 
-                    <Route exact path="/showUser" component={ShowUser} />
-                    <Route exact path="/createUser" component={RegisterUser} />
+                    <PrivateRoute  exact path="/showUser" component={ShowUser} />
+                    <PrivateRoute  exact path="/createUser" component={RegisterUser} />
 
-                    <Route exact path="/showStudent" component={ShowStudent} />
-                    <Route exact path="/editStudent/:id" component={EditStudent} />
-                    <Route exact path="/createStudent" component={CreateStudent} />
+                    <PrivateRoute  exact path="/showStudent" component={ShowStudent} />
+                    <PrivateRoute exact path="/editStudent/:id" component={EditStudent} />
+                    <PrivateRoute  exact path="/createStudent" component={CreateStudent} />
+                    
+                    <PrivateRoute  exact path="/showSchool" component={ShowSchool} />
+                    <PrivateRoute  exact path="/editSchool/:id" component={EditSchool} />
+                    <PrivateRoute  exact path="/createSchool" component={CreateSchool} />
 
-                    <Route exact path="/showSchool" component={ShowSchool} />
-                    <Route exact path="/editSchool/:id" component={EditSchool} />
-                    <Route exact path="/createSchool" component={CreateSchool} />
+                    <PrivateRoute  exact path="/showCareer" component={ShowCareer} />
+                    <PrivateRoute  exact path="/editCareer/:id" component={EditCareer} />
+                    <PrivateRoute  exact path="/createCareer" component={CreateCareer} />
 
-                    <Route exact path="/showCareer" component={ShowCareer} />
-                    <Route exact path="/editCareer/:id" component={EditCareer} />
-                    <Route exact path="/createCareer" component={CreateCareer} />
+                    <PrivateRoute  exact path="/showGroup" component={ShowGroup} />
+                    <PrivateRoute  exact path="/editGroup/:id" component={EditGroup} />
+                    <PrivateRoute  exact path="/createGroup" component={CreateGroup} />
 
-                    <Route exact path="/showGroup" component={ShowGroup} />
-                    <Route exact path="/editGroup/:id" component={EditGroup} />
-                    <Route exact path="/createGroup" component={CreateGroup} />
+                    <PrivateRoute exact path="/showSemeste" component={ShowSemester} />
+                    <PrivateRoute exact path="/editSemester/:id" component={EditSemester} />
+                    <PrivateRoute  exact path="/createSemester" component={CreateSemester} />
 
-                    <Route exact path="/showSemeste" component={ShowSemester} />
-                    <Route exact path="/editSemester/:id" component={EditSemester} />
-                    <Route exact path="/createSemester" component={CreateSemester} />
+                    <PrivateRoute  exact path="/showSubject" component={ShowSubject} />
+                    <PrivateRoute  exact path="/editSubject/:id" component={EditSubject} />
+                    <PrivateRoute  exact path="/createSubject" component={CreateSubject} />
 
-                    <Route exact path="/showSubject" component={ShowSubject} />
-                    <Route exact path="/editSubject/:id" component={EditSubject} />
-                    <Route exact path="/createSubject" component={CreateSubject} />
+                    <PrivateRoute  exact path="/showProfessor" component={ShowProfessor} />
+                    <PrivateRoute exact path="/editProfessor/:id" component={EditProfessor} />
+                    <PrivateRoute  exact path="/createProfessor" component={CreateProfessor} />
 
-                    <Route exact path="/showProfessor" component={ShowProfessor} />
-                    <Route exact path="/editProfessor/:id" component={EditProfessor} />
-                    <Route exact path="/createProfessor" component={CreateProfessor} />
-
-                    <Route exact path="/showNotes" component={ShowNotes} />
+                    <PrivateRoute  exact path="/showNotes" component={ShowNotes} />
 
                 </Switch>
             </div>
-        </BrowserRouter>
+        </Router>
     )
 }
 export default Menu

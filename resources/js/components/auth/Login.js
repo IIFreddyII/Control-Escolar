@@ -9,8 +9,6 @@ const ruta = 'http://localhost:8000/api/login';
 
 const Login = () => {
 
-  
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory();
@@ -61,7 +59,7 @@ const Login = () => {
         />
       </div>
       <div className="d-grid">
-        <button onClick={login} type="submit" className="btn btn-primary"> Sign Up</button>
+        <button onClick={login} type="submit" className="btn btn-primary"> Login</button>
       </div>
     </Container>
   );
