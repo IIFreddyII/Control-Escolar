@@ -14,4 +14,10 @@ class Group extends Model
         'size', 
         'idCar',   
     ];
+
+     //one to many(carrer-group)
+     public function career()
+    {
+        return $this->belongsTo('App\Models\Career','id');
+    }
 }

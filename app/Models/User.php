@@ -43,4 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //one to one(user-student)
+    public function students(){
+        //$student = Student::where('idUser', $this->id)->first();
+        //return $student;
+        
+        //return $this->hasOne(Student::class, 'idUser');
+        return $this->hasOne('App\Models\Student','idUser');
+    }
+
+    //one to one(user-professor)
+    public function professor(){
+        return $this->hasOne('App\Models\Professor', 'idUser');
+    }
 }

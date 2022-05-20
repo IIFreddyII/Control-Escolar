@@ -13,4 +13,22 @@ class Subject extends Model
         'credit',
         'idSemester',
     ];
+
+    //one to one (StudentSubject-subject)
+    public function studentSubject()
+    {
+        return $this->belongsTo('App\Models\StudentSubject','idSubject');
+    }
+
+    //one to many(Professor-subject)
+    public function profesorSubject()
+    {
+        return $this->belongsTo('App\Models\ProfessorSubject','idProfessor');
+    }
+
+    //one to many (semester-subject)
+    public function semester()
+    {
+        return $this->belongsTo('App\Models\Semester','id');
+    }
 }

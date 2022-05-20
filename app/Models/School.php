@@ -16,4 +16,10 @@ class School extends Model
         'tel', 
         'email', 
     ];
+
+    //one to many(school-career)
+    public function career()
+    {
+        return $this->hasMany('App\Models\Career','idSchool');
+    }
 }

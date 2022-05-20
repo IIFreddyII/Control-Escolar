@@ -14,4 +14,16 @@ class Semester extends Model
         'name',
         'period', //Periodo escolar
     ];
+
+    //one to many (semester-subject)
+    public function subject()
+    {
+        return $this->hasMany('App\Models\Subject','idSemester');
+    }
+
+    //one to many(Career-Semester)
+    public function career()
+    {
+        return $this->belongsTo('App\Models\Career','id');
+    }
 }

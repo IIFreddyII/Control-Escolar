@@ -14,4 +14,16 @@ class ProfessorSubject extends Model
         'period',
         'year',
     ];
+
+    //one to many (Professor-Subject)
+    public function subject()
+    {
+        return $this->hasMany('App\Models\Subject','id');
+    }
+    
+    //one to many (Professor- ProfessorSubject)
+    public function professor()
+    {
+        return $this->belongsTo('App\Models\Professor'.'id');
+    }
 }

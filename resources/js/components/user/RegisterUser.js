@@ -25,6 +25,7 @@ const RegisterUser = () => {
     return (
         <Container>
             <div className='text-center'>
+                <h3 className='text-center'>Nuevo Usuario</h3>
                 <form onSubmit={store}>
                     <div className="mb-3">
                         <label>Correo Electronico</label>
@@ -58,7 +59,7 @@ const RegisterUser = () => {
 
                     </div>
 
-                    <div className="d-grid">
+                    <div>
                         <button type="submit" className="btn btn-success btn-lg mt-2 mb-2 text-white">
                             Registrar
                         </button>
