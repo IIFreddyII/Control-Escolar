@@ -53,6 +53,9 @@ const ShowSubject = () => {
             </table>
             <div className='gap-2'>
                 <Link to="/createSubject" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar nueva Materia</Link>
+                <Link to="/HomePage">
+                    <button type="button" className="btn btn-primary btn-lg mt-2 mb-2 text-white">Regresar</button>
+                </Link>
             </div>
         </div>
 

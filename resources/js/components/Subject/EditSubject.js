@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 
-const ruta = 'http://localhost:8000/api/subject_update/'
-const ruta2 = 'http://localhost:8000/api/subject_show/'
+const ruta = 'http://localhost:8000/api/subject_update/';
+const ruta2 = 'http://localhost:8000/api/subject_show/';
+const ruta3 = 'http://localhost:8000/api/semester_index';
 
 const EditSubject = () => {
     const [name, setName] = useState('')
@@ -12,6 +14,8 @@ const EditSubject = () => {
     const [idSemester, setIdSemester] = useState('')
     const history = useHistory()
     const { id } = useParams()
+
+    const [semester, setSemester] = useState([])
 
     const update = async (e) => {
         e.preventDefault()
@@ -24,17 +28,32 @@ const EditSubject = () => {
     }
 
 
-    useEffect( () => {
+    useEffect(() => {
         const getSubjectById = async () => {
             const response = await axios.get(`${ruta2}${id}`)
             setName(response.data.name)
             setCredit(response.data.credit)
             setIdSemester(response.data.idSemester)
-           
+
         }
         getSubjectById()
 
+        const getAllSemester = async () => {
+            const response = await axios.get(ruta3)
+            setSemester(response.data)
+            console.log(response.data);
+        }
+
+        getAllSemester()
+
     }, [])
+
+    const handle = function (e) {
+        const option = e.target.value;
+        console.log(option);
+
+        setIdSemester(option);
+    }
 
     return (
         <Container>
@@ -63,17 +82,19 @@ const EditSubject = () => {
                             />
                         </div>
                         <div className='mb-3'>
-                            <label className='form-label'>Id Semestre</label>
-                            <input
-                                value={idSemester}
-                                onChange={(e) => setIdSemester(e.target.value)}
-                                type='number'
-                                className='form-control text-center'
-                                min='1'
-                                max='12'
-                            />
+                            <label className='form-label'>Semester</label>
+                            <select name='semester' className='form-control text-center' onClick={handle}>
+                                {
+                                    semester.map((semester) => (
+                                        <option key={semester.id} value={semester.id}>{semester.name} </option>
+                                    ))
+                                }
+                            </select>
                         </div>
                         <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
+                        <Link to="/showSubject">
+                            <button type="button" className="btn btn-danger btn-lg mt-2 mb-2 text-white">Cancelar</button>
+                        </Link>
                     </div>
                 </form>
             </div>

@@ -15,12 +15,13 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idUser')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreignId('idUser')->references('id')->on('users')->onDelete('cascade');
+            $table->string('email')->unique();
             $table->string('name');
             $table->string('firstName');
             $table->string('lastName');
             $table->enum('sex',['Masculino','Femenino']);
-            $table->string('curp')->unique();;
+            $table->string('curp')->unique();
             $table->string('address');
             $table->string('tel')->unique();
             $table->timestamps();

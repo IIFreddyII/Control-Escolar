@@ -41,6 +41,9 @@ import EditProfessor from './Professor/EditProfessor';
 import CreateProfessor from './Professor/CreateProfessor';
 
 import ShowNotes from './Notes/ShowNotes';
+import EditNotes from './Notes/EditNotes';
+import CreateNotes from './Notes/CreateNotes';
+
 import Navigation from './Nav';
 import PrivateRoute from './PrivateRoute';
 
@@ -51,7 +54,7 @@ const Menu = () => {
     return (
         <Router>
             <div>
-                <Navigation/>
+            <Navigation/>
                 <Switch>
 
                     <Route exact path="/" component={Login} />
@@ -93,6 +96,8 @@ const Menu = () => {
                     <PrivateRoute  exact path="/createProfessor" component={CreateProfessor} />
 
                     <PrivateRoute  exact path="/showNotes" component={ShowNotes} />
+                    <PrivateRoute exact path="/editNotes/:id" component={EditNotes} />
+                    <PrivateRoute exact path="/createNotes" component={CreateNotes} />
 
                 </Switch>
             </div>

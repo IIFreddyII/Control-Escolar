@@ -30,8 +30,9 @@ const ShowUser = () => {
                     <thead className='bg-primary text-white'>
                         <tr>
                             <th>ID</th>
+                            <th>Nombre</th>
                             <th>Correo</th>
-                            <th>type</th>
+                            <th>Password</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -39,8 +40,9 @@ const ShowUser = () => {
                         {users.map((user) => (
                             <tr key={user.id}>
                                 <td> {user.id} </td>
+                                <td> {user.name} </td>
                                 <td> {user.email} </td>
-                                <td> {user.type} </td>
+                                <td> !!Secret!! </td>
                                 <td>
                                     <button onClick={() => deleteUser(user.id)} className='btn btn-danger'>Eliminar</button>
                                 </td>
@@ -51,6 +53,9 @@ const ShowUser = () => {
                 </table>
                 <div className='gap-2'>
                     <Link to="/createUser" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar Nuevo Usuario</Link>
+                    <Link to="/HomePage">
+                    <button type="button" className="btn btn-primary btn-lg mt-2 mb-2 text-white">Regresar</button>
+                </Link>
                 </div>
             </div> 
     )

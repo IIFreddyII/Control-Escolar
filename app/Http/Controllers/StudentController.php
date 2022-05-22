@@ -29,7 +29,7 @@ class StudentController extends Controller
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'idUser' => 'required',
+            'email' => 'required',
             'name' => 'required',
             'firstName' => '',
             'lastName' => 'required',
@@ -45,7 +45,7 @@ class StudentController extends Controller
         }
 
         $student = Student::create([
-            'idUser' => $request->idUser,
+            'email' => $request->email,
             'name' => $request->name,
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
@@ -91,7 +91,7 @@ class StudentController extends Controller
         }
         */
         $student = Student::find($id);
-        $student->idUser = $request->idUser;
+        $student->email = $request->email;
         $student->name = $request->name;
         $student->firstName = $request->firstName;
         $student->lastName = $request->lastName;

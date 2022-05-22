@@ -1,16 +1,19 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 
 const ruta = 'http://localhost:8000/api/professor_update/'
 const ruta2 = 'http://localhost:8000/api/professor_show/'
+const defaultSelectValue = "---";
 
 const EditProfessor = () => {
-    const [idUser, setIdUser] = useState('')
+
     const [name, setName] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
     const [sex, setSex] = useState('')
     const [curp, setCurp] = useState('')
     const [address, setAddress] = useState('')
@@ -25,7 +28,7 @@ const EditProfessor = () => {
     const update = async (e) => {
         e.preventDefault()
         await axios.put(`${ruta}${id}`, {
-            idUser: idUser,
+            email: email,
             name: name,
             firstName: firstName,
             lastName: lastName,
@@ -42,10 +45,11 @@ const EditProfessor = () => {
     useEffect(() => {
         const getProfessorById = async () => {
             const response = await axios.get(`${ruta2}${id}`)
-            setIdUser(response.data.idUser)
+
             setName(response.data.name)
             setFirstName(response.data.firstName)
             setLastName(response.data.lastName)
+            setEmail(response.data.email)
             setSex(response.data.sex)
             setCurp(response.data.curp)
             setAddress(response.data.address)
@@ -65,17 +69,9 @@ const EditProfessor = () => {
                 <h3 className='text-center'>Actualizar Datos de Profesor</h3>
                 <form onSubmit={update}>
                     <div className='text-center'>
+
                         <div className='mb-3'>
-                            <label className='form-label'>Usuario</label>
-                            <input
-                                value={idUser}
-                                onChange={(e) => setIdUser(e.target.value)}
-                                type='text'
-                                className='form-control text-center'
-                            />
-                        </div>
-                        <div className='mb-3'>
-                            <label className='form-label'>Nombre</label>
+                            <label className='form-label'>Nombre:</label>
                             <input
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -102,13 +98,27 @@ const EditProfessor = () => {
                             />
                         </div>
                         <div className='mb-3'>
-                            <label className='form-label'>Sexo</label>
+                            <label className='form-label'>Correo Electronico</label>
                             <input
-                                value={sex}
-                                onChange={(e) => setSex(e.target.value)}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 type='text'
                                 className='form-control text-center'
                             />
+                        </div>
+                        <div className='mb-3'>
+                            <label className='form-label'>Sexo</label>
+                            <select className='form-control text-center'
+                                id="sex"
+                                name="sex"
+                                defaultValue={sex}
+                                style={{ color: sex === defaultSelectValue ? "gray" : "black" }}
+                                onChange={e => setSex(e.target.value)}
+                            >
+                                <option>{sex}</option>
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                            </select>
                         </div>
                         <div className='mb-3'>
                             <label className='form-label'>CURP</label>
@@ -148,12 +158,18 @@ const EditProfessor = () => {
                         </div>
                         <div className='mb-3'>
                             <label className='form-label'>Grado Academico</label>
-                            <input
-                                value={academic_degree}
-                                onChange={(e) => setAcademic_degree(e.target.value)}
-                                type='text'
-                                className='form-control text-center'
-                            />
+                            <select className='form-control text-center'
+                                id="Academic_degree"
+                                name="Academic_degree"
+                                defaultValue={academic_degree}
+                                style={{ color: academic_degree === defaultSelectValue ? "gray" : "black" }}
+                                onChange={e => setAcademic_degree(e.target.value)}
+                            >
+                                <option>{academic_degree}</option>
+                                <option>Licenciatura</option>
+                                <option>Maestria</option>
+                                <option>Doctorado</option>
+                            </select>
                         </div>
                         <div className='mb-3'>
                             <label className='form-label'>Especialidad</label>
@@ -165,6 +181,9 @@ const EditProfessor = () => {
                             />
                         </div>
                         <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
+                        <Link to="/showProfessor">
+                            <button type="button" className="btn btn-danger btn-lg mt-2 mb-2 text-white">Cancelar</button>
+                        </Link>
                     </div>
                 </form>
             </div>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom'
 import Select from 'react-select'
 
@@ -8,11 +9,11 @@ import Select from 'react-select'
 
 
 const ruta = 'http://localhost:8000/api/professor_insert';
-const ruta2 = 'http://localhost:8000/api';
+const defaultSelectValue = "---";
 
 const CreateProfessor = () => {
 
-    const [idUser, setIdUser] = useState('')
+    const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -29,10 +30,11 @@ const CreateProfessor = () => {
         e.preventDefault()
         await axios.post(ruta, {
 
-            idUser: idUser,
+
             name: name,
             firstName: firstName,
             lastName: lastName,
+            email: email,
             sex: sex,
             curp: curp,
             address: address,
@@ -49,15 +51,7 @@ const CreateProfessor = () => {
             <h3 className='text-center'>Nuevo Profesor</h3>
             <form onSubmit={store}>
                 <div className='text-center'>
-                    <div className='mb-3'>
-                        <label className='form-label'>Usuario</label>
-                        <input
-                            value={idUser}
-                            onChange={(e) => setIdUser(e.target.value)}
-                            type='text'
-                            className='form-control text-center'
-                        />
-                    </div>
+
                     <div className='mb-3'>
                         <label className='form-label'>Nombre</label>
                         <input
@@ -86,13 +80,27 @@ const CreateProfessor = () => {
                         />
                     </div>
                     <div className='mb-3'>
-                        <label className='form-label'>Sexo</label>
+                        <label className='form-label'>Correo Electronico</label>
                         <input
-                            value={sex}
-                            onChange={(e) => setSex(e.target.value)}
-                            type='text'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type='email'
                             className='form-control text-center'
                         />
+                    </div>
+                    <div className='mb-3'>
+                        <label className='form-label'>Sexo</label>
+                        <select className='form-control text-center'
+                            id="sex"
+                            name="sex"
+                            defaultValue={sex}
+                            style={{ color: sex === defaultSelectValue ? "gray" : "black" }}
+                            onChange={e => setSex(e.target.value)}
+                        >
+                            <option>{defaultSelectValue}</option>
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+                        </select>
                     </div>
                     <div className='mb-3'>
                         <label className='form-label'>CURP</label>
@@ -132,12 +140,18 @@ const CreateProfessor = () => {
                     </div>
                     <div className='mb-3'>
                         <label className='form-label'>Grado Academico</label>
-                        <input
-                            value={academic_degree}
-                            onChange={(e) => setAcademic_degree(e.target.value)}
-                            type='text'
-                            className='form-control text-center'
-                        />
+                        <select className='form-control text-center'
+                            id="Academic_degree"
+                            name="Academic_degree"
+                            defaultValue={academic_degree}
+                            style={{ color: academic_degree === defaultSelectValue ? "gray" : "black" }}
+                            onChange={e => setAcademic_degree(e.target.value)}
+                        >
+                            <option>{academic_degree}</option>
+                            <option>Licenciatura</option>
+                            <option>Maestria</option>
+                            <option>Doctorado</option>
+                        </select>
                     </div>
                     <div className='mb-3'>
                         <label className='form-label'>Especialidad</label>
@@ -149,6 +163,9 @@ const CreateProfessor = () => {
                         />
                     </div>
                     <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar</button>
+                    <Link to="/showProfessor">
+                        <button type="button" className="btn btn-danger btn-lg mt-2 mb-2 text-white">Cancelar</button>
+                    </Link>
                 </div>
             </form>
         </Container>

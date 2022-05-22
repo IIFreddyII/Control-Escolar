@@ -1,13 +1,16 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom";
 
 const ruta = 'http://localhost:8000/api/student_update/'
 const ruta2 = 'http://localhost:8000/api/student_show/'
 
+const defaultSelectValue = "---";
+
 const EditStudent = () => {
-    const [idUser, setIdUser] = useState('')
+    const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -21,7 +24,7 @@ const EditStudent = () => {
     const update = async (e) => {
         e.preventDefault()
         await axios.put(`${ruta}${id}`, {
-            idUser: idUser,
+            email: email,
             name: name,
             firstName: firstName,
             lastName: lastName,
@@ -36,7 +39,7 @@ const EditStudent = () => {
     useEffect(() => {
         const getStudentById = async () => {
             const response = await axios.get(`${ruta2}${id}`)
-            setIdUser(response.data.idUser)
+            setEmail(response.data.email)
             setName(response.data.name)
             setFirstName(response.data.firstName)
             setLastName(response.data.lastName)
@@ -56,10 +59,10 @@ const EditStudent = () => {
                 <form onSubmit={update}>
                     <div className='text-center'>
                         <div className='mb-3'>
-                            <label className='form-label'>Usuario</label>
+                            <label className='form-label'>Correo Electronico</label>
                             <input
-                                value={idUser}
-                                onChange={(e) => setIdUser(e.target.value)}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 type='text'
                                 className='form-control text-center'
                             />
@@ -92,13 +95,18 @@ const EditStudent = () => {
                             />
                         </div>
                         <div className='mb-3'>
-                            <label className='form-label'>Sexo</label>
-                            <input
-                                value={sex}
-                                onChange={(e) => setSex(e.target.value)}
-                                type='text'
-                                className='form-control text-center'
-                            />
+                        <label className='form-label'>Sexo</label>
+                            <select className='form-control text-center'
+                                id="sex"
+                                name="sex"
+                                defaultValue={sex}
+                                style={{ color: sex === defaultSelectValue ? "gray" : "black" }}
+                                onChange={e => setSex(e.target.value)}
+                            >
+                                <option>{sex}</option>
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                            </select>
                         </div>
                         <div className='mb-3'>
                             <label className='form-label'>CURP</label>
@@ -128,6 +136,9 @@ const EditStudent = () => {
                             />
                         </div>
                         <button type='submit' className='btn btn-success btn-lg mt-2 mb-2 text-white'>Actualizar</button>
+                        <Link to="/showStudent">
+                            <button type="button" className="btn btn-danger btn-lg mt-2 mb-2">Cancelar</button>
+                        </Link>
                     </div>
                 </form>
             </div>

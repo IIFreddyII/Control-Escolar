@@ -27,10 +27,11 @@ class ProfessorController extends Controller
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'idUser' => 'required',
+            
             'name' => 'required',
             'firstName' => 'required',
             'lastName' => 'required',
+            'email' => 'required',
             'sex' => 'required',
             'curp' => 'required|max:18|unique:professors,curp',
             'address' => 'required',
@@ -46,10 +47,11 @@ class ProfessorController extends Controller
         }
 
         $professor = Professor::create([
-            'idUser' => $request->idUser,
+            
             'name' => $request->name,
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
+            'email' => $request->email,
             'sex' => $request->sex,
             'curp' => $request->curp,
             'address' => $request->address,
@@ -99,10 +101,10 @@ class ProfessorController extends Controller
 
         */
         $professor = Professor::find($id);
-        $professor->idUser = $request->idUser;
         $professor->name = $request->name;
         $professor->firstName = $request->firstName;
         $professor->lastName = $request->lastName;
+        $professor->email= $request->email;
         $professor->sex = $request->sex;
         $professor->curp = $request->curp;
         $professor->address = $request->address;

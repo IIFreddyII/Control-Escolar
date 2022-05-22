@@ -64,7 +64,7 @@ class StudentSubjectController extends Controller
     {
         /*validacion de los campos*/
         $validator = Validator::make($request->all(), [
-            'idSubject' => 'required',
+            'idSubject' => 'required|unique:student_subjects,idSubject',
             'idStudent' => 'required',
             'cal' => 'required',
 

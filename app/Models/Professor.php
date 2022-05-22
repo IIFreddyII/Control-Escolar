@@ -9,7 +9,7 @@ class Professor extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'idUser',
+        'email',
         'name',
         'firstName',
         'lastName',
@@ -22,11 +22,6 @@ class Professor extends Model
         'specialty',
     ];
 
-    //one to one(user-professor)
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User','id');
-    }
 
     //one to many(professor-professor-subject)
     public function professorSubject()

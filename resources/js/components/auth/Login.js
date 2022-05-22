@@ -15,7 +15,7 @@ const Login = () => {
 
   async function login() {
     console.warn(email, password);
-    let item = { email, password };
+    let item = {email, password };
     let result = await fetch(ruta, {
       method: 'POST',
       headers: {
@@ -33,33 +33,34 @@ const Login = () => {
   return (
     <Container>
       <div className="text-center">
-        <h3>LOGIN</h3>
+        <h2>BIENVENIDO</h2>
+        <h4>INGRESE ALA PLATAFORMA</h4>
         <img
           src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" height={'150px'}
         />
       </div>
-      <div className="mb-3">
-        <label>Correo Electronico</label>
+      <div className="mb-3 text-center">
+        <h4><label>Correo Electronico</label></h4>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
-          className="form-control"
+          className="form-control text-center"
           placeholder="Ingrese su correo electronico"
         />
       </div>
-      <div className="mb-3">
-        <label>Contraseña</label>
+      <div className="mb-3 text-center">
+        <h4><label>Contraseña</label></h4>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
-          className="form-control"
+          className="form-control text-center"
           placeholder="Ingrese su contraseña"
         />
       </div>
       <div className="d-grid">
-        <button onClick={login} type="submit" className="btn btn-primary"> Login</button>
+        <button onClick={login} type="submit" className="btn btn-primary btn-lg"> Iniciar Session</button>
       </div>
     </Container>
   );

@@ -9,7 +9,7 @@ class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'idUser',
+        'email',
         'name',
         'firstName',
         'lastName',
@@ -18,12 +18,6 @@ class Student extends Model
         'address',
         'tel',
     ];
-
-    //one to one(user-student)
-    public function user(){
-        return $this->belongsTo(User::class,'id');
-    }
-
 
      //one to many(Students-StudentSubject)
     public function studentSubject(){

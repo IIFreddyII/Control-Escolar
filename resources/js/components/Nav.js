@@ -16,9 +16,9 @@ const Navigation = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/HomePage">
                     <img
-                        src="https://cdn-icons-png.flaticon.com/512/4207/4207247.png" height={'50px'}
+                        src="https://cdn-icons-png.flaticon.com/512/4207/4207247.png" height={'70px'}
                     />
-                    CONTROL-ESCOLAR</Navbar.Brand>
+                    <b>CONTROL-ESCOLAR</b></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -32,8 +32,9 @@ const Navigation = () => {
                                         <img
                                             src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png" height={'30px'}
                                         />
-                                        Cerrar Session
+                                        <b>Cerrar Session</b>
                                     </Nav.Link>
+
                                 </Nav>
                             </>
                             :
@@ -43,12 +44,12 @@ const Navigation = () => {
                                         <img
                                             src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png" height={'30px'}
                                         />
-                                        Login</Nav.Link>
+                                        <b>Login</b></Nav.Link>
                                     <Nav.Link as={Link} to="/Register">
                                         <img
                                             src="https://cdn-icons-png.flaticon.com/512/3596/3596029.png" height={'30px'}
                                         />
-                                        Registro</Nav.Link>
+                                        <b>Registro</b></Nav.Link>
                                 </Nav>
                             </>
                     }

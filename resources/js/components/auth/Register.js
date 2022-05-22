@@ -15,14 +15,14 @@ const Register = () => {
         }
     }, [])
 
-
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [type, setType] = useState('Student')
+
     const history = useHistory()
 
     async function signUp() {
-        let item = { email, password, type }
+        let item = { name, email, password }
         console.warn(item)
 
         let result = await fetch(ruta, {
@@ -43,36 +43,47 @@ const Register = () => {
     return (
         <Container>
             <div className="text-center">
-                <h3>REGISTRO</h3>
+                <h2>BIENVENIDO</h2>
+                <h4>REGISTRESE EN LA PLATAFORMA</h4>
                 <img
                     src="https://cdn-icons-png.flaticon.com/512/2921/2921147.png" height={'150px'}
                 />
             </div>
-            <div className="mb-3">
-                <label>Correo Electronico</label>
+            <div className="mb-3 text-center">
+                <h4><label>Nombre</label></h4>
+                <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    type="text"
+                    className="form-control text-center"
+                    placeholder="Ingrese su nombre"
+                />
+            </div>
+            <div className="mb-3 text-center">
+                <h4><label>Correo Electronico</label></h4>
                 <input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
-                    className="form-control"
+                    className="form-control text-center"
                     placeholder="Ingrese su correo electronico"
                 />
             </div>
-            <div className="mb-3">
-                <label>Contraseña</label>
+            <div className="mb-3 text-center">
+                <h4><label>Contraseña</label></h4>
                 <input
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
-                    className="form-control"
+                    className="form-control text-center"
                     placeholder="Ingrese su contraseña"
                 />
             </div>
             <div className="d-grid">
-                <button onClick={signUp} type="submit" className="btn btn-primary"> Sign Up</button>
+                <button onClick={signUp} type="submit" className="btn btn-primary btn-lg"> Registrarse</button>
             </div>
             <p className="forgot-password text-right">
-                Ya estas Registrado <Link to="/login">Inicia Session?</Link>
+                Ya estas Registrado <b><Link to="/login">Inicia Session?</Link></b>
             </p>
 
         </Container>

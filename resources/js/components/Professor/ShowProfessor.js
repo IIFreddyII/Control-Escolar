@@ -3,8 +3,9 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 
-
 const ruta = 'http://localhost:8000/api';
+const defaultSelectValue = "---";
+
 const ShowProfessor = () => {
     const [professors, setProfessors] = useState([])
 
@@ -30,10 +31,10 @@ const ShowProfessor = () => {
                 <thead className='bg-primary text-white'>
                     <tr>
                         <th>ID</th>
-                        <th>Usuario</th>
                         <th>Nombre</th>
                         <th>Apellido Materno</th>
                         <th>Apellido Paterno</th>
+                        <th>Correo Electronico</th>
                         <th>Sexo</th>
                         <th>CURP</th>
                         <th>Direccion</th>
@@ -48,10 +49,10 @@ const ShowProfessor = () => {
                     {professors.map((professor) => (
                         <tr key={professor.id}>
                             <td> {professor.id} </td>
-                            <td> {professor.idUser} </td>
                             <td> {professor.name} </td>
                             <td> {professor.firstName} </td>
                             <td> {professor.lastName} </td>
+                            <td> {professor.email} </td>
                             <td> {professor.sex} </td>
                             <td> {professor.curp} </td>
                             <td> {professor.address} </td>
@@ -70,6 +71,9 @@ const ShowProfessor = () => {
             </table>
             <div className='gap-2'>
                 <Link to="/createProfessor" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar nuevo Profesor</Link>
+                <Link to="/HomePage">
+                    <button type="button" className="btn btn-primary btn-lg mt-2 mb-2 text-white">Regresar</button>
+                </Link>
             </div>
         </div>
     )

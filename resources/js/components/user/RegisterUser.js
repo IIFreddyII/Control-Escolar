@@ -7,17 +7,17 @@ import axios from 'axios'
 const ruta = 'http://localhost:8000/api/register';
 
 const RegisterUser = () => {
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('12345678')
-    const [type, setType] = useState('')
+    const [password, setPassword] = useState('')
     const history = useHistory()
 
     const store = async (e) => {
         e.preventDefault()
         await axios.post(ruta, {
+            name: name,
             email: email,
             password: password,
-            type: type,
         })
         history.push('/showUser');
     }
@@ -27,6 +27,15 @@ const RegisterUser = () => {
             <div className='text-center'>
                 <h3 className='text-center'>Nuevo Usuario</h3>
                 <form onSubmit={store}>
+                    <div className="mb-3">
+                        <label>Nombre</label>
+                        <input
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            type="text"
+                            className="form-control text-center"
+                        />
+                    </div>
                     <div className="mb-3">
                         <label>Correo Electronico</label>
                         <input
@@ -46,19 +55,6 @@ const RegisterUser = () => {
                             className="form-control text-center"
                         />
                     </div>
-
-                    <div className="form-group">
-                        <label>Type</label>
-                        <input
-                            value={type}
-                            onChange={(e) => setType(e.target.value)}
-                            type="text"
-                            className="form-control text-center"
-                            placeholder='Student,Professor, Admin'
-                        />
-
-                    </div>
-
                     <div>
                         <button type="submit" className="btn btn-success btn-lg mt-2 mb-2 text-white">
                             Registrar

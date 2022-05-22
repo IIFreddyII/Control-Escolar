@@ -43,7 +43,7 @@ const ShowNotes = () => {
                             <td> {note.idStudent} </td>
                             <td> {note.cal} </td>
                             <td>
-                                <Link to={`/editProfessor/${note.id}`} className='btn btn-warning'>Editar</Link>
+                                <Link to={`/editNotes/${note.id}`} className='btn btn-warning'>Editar</Link>
                                 <button onClick={() => deleteProfessors(note.id)} className='btn btn-danger'>Eliminar</button>
                             </td>
 
@@ -52,11 +52,12 @@ const ShowNotes = () => {
                 </tbody>
             </table>
             <div className='gap-2'>
-                <Link to="/createProfessor" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar nueva calificacion</Link>
+                <Link to="/createNotes" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Registrar nueva calificacion</Link>
+                <Link to="/HomePage">
+                    <button type="button" className="btn btn-primary btn-lg mt-2 mb-2 text-white">Regresar</button>
+                </Link>
             </div>
         </div>
-
-
     )
 }
 
