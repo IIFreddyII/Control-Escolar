@@ -11,6 +11,7 @@ const Navigation = () => {
         history.push('/');
     }
 
+    
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>

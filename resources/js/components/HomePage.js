@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Carousel, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 const HomePage = () => {
+
+   
     return (
         <Container >
             <div className='text-center page-header'>
